@@ -24,6 +24,9 @@ export class FlatModal {
     console.log(JSON.stringify(flat));
   }
 
+  presentApplication(event){
+    this.navCtrl.push(ApplicationPage)
+  }
 
   ngOnInit() {
     this.initMap();
@@ -60,22 +63,18 @@ export class FlatModal {
 export class KeysPipe implements PipeTransform {
   transform(value: any, args?: any[]): any[] {
     // check if "routes" exists
-    if(value) {
+    if (value) {
       // create instance vars to store keys and final output
-      let keyArr: any[] = Object.keys(value),
+      let keyArr:any[] = Object.keys(value),
         dataArr = [];
 
       // loop through the object,
       // pushing values to the return array
-      keyArr.forEach((key: any) => {
+      keyArr.forEach((key:any) => {
         dataArr.push(value[key]);
       });
       // return the resulting array
       return dataArr;
     }
-=======
-  presentApplication(event){
-    this.navCtrl.push(ApplicationPage)
->>>>>>> a3a61f95d692cedc77cfc04b81a74cc1c1a44842
   }
 }
