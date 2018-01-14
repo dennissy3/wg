@@ -25741,6 +25741,38 @@ ion-card {
   background-color: #fafafa;
 }
 
+page-application .answer {
+  height: 25vh;
+}
+
+page-application .question {
+  position: absolute;
+  top: 5%;
+  padding: 10px;
+}
+
+page-application .dateSlide {
+  padding: 30px;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+page-application .date {
+  font-size: 24pt;
+}
+
+page-application .link {
+  margin-bottom: 10px;
+}
+
+page-application .floatingButton {
+  z-index: 1;
+  position: fixed;
+  bottom: 20px;
+  margin: 5px;
+}
+
 page-home .flat-slider {
   height: 100vh;
 }

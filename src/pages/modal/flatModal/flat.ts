@@ -54,6 +54,10 @@ export class FlatModal {
     console.log(event)
     this.viewCtrl.dismiss();
   }
+
+  presentApplication(event){
+    this.navCtrl.push(ApplicationPage)
+  }
 }
 
 @Pipe({ name: 'keys',  pure: false })
@@ -73,9 +77,4 @@ export class KeysPipe implements PipeTransform {
       // return the resulting array
       return dataArr;
     }
-=======
-  presentApplication(event){
-    this.navCtrl.push(ApplicationPage)
->>>>>>> a3a61f95d692cedc77cfc04b81a74cc1c1a44842
-  }
 }

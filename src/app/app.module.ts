@@ -24,11 +24,8 @@ import {KeysPipe} from "../pages/modal/flatModal/flat";
     StartPage,
     QuestionnairePage,
     PeopleModal,
-<<<<<<< HEAD
-    KeysPipe
-=======
+    KeysPipe,
     ApplicationPage
->>>>>>> a3a61f95d692cedc77cfc04b81a74cc1c1a44842
   ],
   imports: [
     BrowserModule,
