@@ -13,7 +13,7 @@
       </ion-card>
 
 
-      <p class="subtitle">Your Conversations<span>See All</span></p>
+      <p class="subtitle conversation">Your Conversations<span>See All</span></p>
       <ion-slides slidesPerView="1.5" class="message-slider">
         <ion-slide *ngFor="let a of applicants" (click)="presentPeopleModal()">
           <div class="head-img small" id="karlo"></div>
@@ -24,7 +24,6 @@
           </ion-card>
         </ion-slide>
       </ion-slides>
-
 
       <p class="title bottom-arrow" (click)="move(1)"><ion-icon name="arrow-up"></ion-icon></p>
     </ion-slide>

@@ -27,15 +27,26 @@ export class FlatPage {
       draggable: false,
       zoomControl: false
     });
-/*
+
+    let circleIcon = {
+      path: 'M 0, 0 m -10, 0 a 10, 10 0 1, 0 20, 0 a 10, 10 0 1, 0 -20, 0',
+      fillColor: '#00FFFF',
+      fillOpacity: 0.0,
+      scale: 1,
+      strokeColor: '#00FFFF',
+      strokeWeight: 2,
+      strokeOpacity: 0.8
+    };
+
     //create marker
     let myLatLng = new google.maps.LatLng(52.532729,13.409080);
     var marker = new google.maps.Marker({
+      icon: this.circleIcon,
       map: this.map,
       position: myLatLng
     });
     this.markers.push(marker);
-*/
+
   }
 
   close() {
