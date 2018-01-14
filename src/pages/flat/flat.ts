@@ -41,7 +41,6 @@ export class FlatPage {
     //create marker
     let myLatLng = new google.maps.LatLng(52.532729,13.409080);
     var marker = new google.maps.Marker({
-      icon: this.circleIcon,
       map: this.map,
       position: myLatLng
     });
