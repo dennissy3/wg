@@ -55,15 +55,20 @@ page-flat {
 
   .flat {
     border-radius: 10%;
-    margin-top: 2.5%
+    margin-top: 2.5%;
+    display:flex;
+    flex-direction:'column';
+    align-items:'center';
+    justify-content:'center';
   }
 
   .floatingButton{
-    z-index:1;
     position: fixed;
     bottom:20px;
-    margin: 5px;
+    width: 100%;
+    border-radius:0%;
   }
+
 
   #map {
     width: calc(100% - 20px);
