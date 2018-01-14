@@ -53,14 +53,6 @@ page-flat {
     background-size: cover;
   }
 
-  #map {
-    width: calc(100% - 20px);
-    height: 40%;
-    background-color: rgba(0,0,0,0) !important;
-    border-radius:10%;
-    margin: 10px auto;
-  }
-
   .flat {
     border-radius: 10%;
     margin-top: 2.5%
@@ -71,5 +63,13 @@ page-flat {
     position: fixed;
     bottom:20px;
     margin: 5px;
+  }
+
+  #map {
+    width: calc(100% - 20px);
+    height: 40%;
+    background-color: rgba(0,0,0,0) !important;
+    border-radius:10%;
+    margin: 10px auto;
   }
 }

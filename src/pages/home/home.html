@@ -1,33 +1,26 @@
 <ion-content class="card-background-page" no-bounce>
   <ion-slides direction="vertical" initialSlide="1">
     <ion-slide class="top">
-      <p class="name title">Hey Karlo</p>
-      <ion-card class="wg-ad">
-        <div class="card-title">"Neuköllnies"</div>
+      <p class="name title">Hey Karlo!</p>
+
+
+      <ion-card class="edit-wg" (click)="openEditFlat()">
+        <div class="wg-ad"></div>
+        <ion-card-content>
+          <p>Finalize your listing</p>
+          <p>Your room is 70% done</p>
+        </ion-card-content>
       </ion-card>
 
-      <ion-card>
-        <ion-list>
-          <ion-item>
-            <button *ngIf="!adOnline" ion-button clear>Add your fantastic room</button>
-            <button *ngIf="adOnline" ion-button clear>Edit your fancy room</button>
-          </ion-item>
-          <ion-item>
-            <button *ngIf="adOnline" ion-button clear>Add your kick-ass flatmates</button>
-          </ion-item>
-        </ion-list>
-      </ion-card>
 
-      <p class="subtitle">Messages</p>
-      <ion-slides slidesPerView="3" class="message-slider">
+      <p class="subtitle">Your Conversations<span>See All</span></p>
+      <ion-slides slidesPerView="1.5" class="message-slider">
         <ion-slide *ngFor="let a of applicants" (click)="presentPeopleModal()">
+          <div class="head-img small" id="karlo"></div>
           <ion-card class="message">
-            <div class="fit-circle">{{a.name}}</div>
-            <span class="age">
-              <span id="age">{{a.age}}</span>
-              <span>years<br>old</span>
-            </span>
-            <span class="occupation">{{a.job}}</span>
+            <div>{{a.name}}</div>
+            <div>Hey Karlo, I really love the room! Do you wanna hang...</div>
+            <span class="occupation">12th January</span>
           </ion-card>
         </ion-slide>
       </ion-slides>

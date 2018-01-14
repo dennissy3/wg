@@ -8,6 +8,12 @@ page-home {
     border-radius: 3% !important;
   }
 
+  .subtitle span {
+    color: lightgray;
+    font-size: 12px;
+    margin: 0 0 0 15px;
+  }
+
   .top {
     align-items: flex-start;
   }
@@ -25,33 +31,21 @@ page-home {
   }
 
   .message-slider {
-    height: 100px;
+    height: 180px;
   }
 
   .message-slider ion-slide {
-    height: 100px !important;
-    width: auto !important;
+    height: 180px !important;
   }
 
   .message-slider ion-slide ion-card {
     height: 30vw;
-    width: 30vw;
+    width: 60vw;
     border-radius:10% !important;
   }
 
-  .fit-circle::before {
-    content: "";
-    border: 2.5px solid red;
-    width: 8px;
-    height: 8px;
-    border-radius: 100%;
-    display: inline-block;
-    margin: 5px 5px 0 0;
-    font-size: 16px;
-  }
-
   .wg-ad {
-    height: 30vh;
+    height: 14vh;
     background-image: url('../../assets/1.jpg');
     background-position: center;
     background-size:cover;
@@ -61,19 +55,41 @@ page-home {
     }
   }
 
+  .edit-wg {
+
+    p {
+      font-size: 12px;
+      text-align: left;
+    }
+    p:first-child {
+      font-weight: bold;
+    }
+  }
+
+  .edit-wg:after {
+    content:'';
+    width:70%;
+    height:12px;
+    background:red;
+    position:absolute;
+    bottom:-4px;
+    left: 0;
+  }
+
   .message {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    padding: 8px;
+    font-size: 12px;
+    text-align: left;
   }
 
-  .age span {
-    height: 50px !important;
-  }
-
-  #age {
-    font-size: 24px;
+  .message div:first-child {
     font-weight: bold;
+    margin: 0 0 5px 0;
   }
+
 
   .occupation {
     position: absolute;

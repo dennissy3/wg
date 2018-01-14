@@ -6,8 +6,13 @@
   </ion-navbar>
 </ion-header>-->
 
-<ion-content (click)="goToQuestionnaire()">
-  <p class="title">r__m</p>
+<ion-content class="bg" padding>
+  <div class="logo"></div>
+  <p class="title">Welcome to R____M</p>
 
-  <p class="continue-info">Tap to continue</p>
+  <div class="bottom-btn">
+    <button ion-button clear block>Sign in</button>
+    <button ion-button round block class="gradient" (click)="goToQuestionnaire()">I'm offering</button>
+    <button ion-button round block class="gradient" (click)="goToQuestionnaire()">I'm searching</button>
+  </div>
 </ion-content>

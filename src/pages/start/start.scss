@@ -1,14 +1,39 @@
 page-start {
-  .title {
-    font-size: 48px;
-    text-align: center;
+
+  .logo {
+    background-image: url('../../assets/Logo.svg');
+    width: 100vw;
+    height: 50vw;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
-  .continue-info {
+  .bg {
+    background-image: url('../../assets/bg.png');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .title {
+    font-size: 36px;
+    text-align: center;
+    color: #fff;
+  }
+
+  .bottom-btn {
     position: absolute;
     bottom: 5%;
-    display: block;
     text-align: center;
-    width: 100%
+    width: 90%;
+  }
+
+  button {
+    margin: 0 0 10px 0 !important;
+    font-weight: bold;
+    color: #fff !important;
+  }
+
+  button:first-of-type {
+    margin: 0 !important;
   }
 }

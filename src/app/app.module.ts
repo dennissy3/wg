@@ -12,6 +12,7 @@ import {QuestionnairePage} from "../pages/questionnaire/questionnaire";
 import {ApplicationPage} from "../pages/application/application";
 import {IonicSwipeAllModule} from "ionic-swipe-all/dist/index";
 import {PeopleModal} from "../pages/modal/peopleModal/people";
+import {FlatPage} from "../pages/flat/flat";
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import {PeopleModal} from "../pages/modal/peopleModal/people";
     StartPage,
     QuestionnairePage,
     PeopleModal,
-    ApplicationPage
+    ApplicationPage,
+    FlatPage
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,8 @@ import {PeopleModal} from "../pages/modal/peopleModal/people";
     StartPage,
     QuestionnairePage,
     PeopleModal,
-    ApplicationPage
+    ApplicationPage,
+    FlatPage
   ],
   providers: [
     StatusBar,

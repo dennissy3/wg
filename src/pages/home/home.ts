@@ -7,6 +7,7 @@ import {FlatModal} from "../modal/flatModal/flat";
 import {PeopleModal} from "../modal/peopleModal/people";
 
 import {ApplicationPage} from '../application/application'
+import {FlatPage} from "../flat/flat";
 
 
 @Component({
@@ -83,9 +84,11 @@ export class HomePage {
     else {
       this.slides.slideNext(500);
     }
-
   }
 
+  openEditFlat(f) {
+    this.navCtrl.push(FlatPage)
+  }
 
 
 }

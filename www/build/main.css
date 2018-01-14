@@ -25682,6 +25682,14 @@ ion-card {
   border-radius: 10% !important;
 }
 
+.gradient {
+  background: #ff6d56;
+  background: -webkit-gradient(left top, right top, color-stop(0%, #ff6d56), color-stop(100%, #ff5275));
+  background: -webkit-gradient(linear, left top, right top, from(#ff6d56), to(#ff5275));
+  background: linear-gradient(to right, #ff6d56 0%, #ff5275 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff6d56', endColorstr='#ff5275', GradientType=1);
+}
+
 .title {
   font-size: 24px;
   height: 5vh;
@@ -25691,10 +25699,48 @@ ion-card {
 }
 
 .subtitle {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   text-align: left;
-  margin: 20px 0 10px 10px;
+}
+
+.head-img {
+  display: inline-block;
+  border-radius: 100%;
+  vertical-align: top;
+}
+
+.head-img.small {
+  margin: 0 0 0 12px;
+  width: 12vw;
+  height: 12vw;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.head-img.medium {
+  width: 18vw;
+  height: 18vw;
+  margin: 0 15px 0 0;
+}
+
+.head-img#karlo {
+  background-image: url("../assets/karlo.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.head-img#empty {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-style: dashed;
+  font-size: 36px;
+  color: red;
+  text-align: center;
+  vertical-align: center;
+  font-weight: 200;
 }
 
 .card-background-page ion-card {
@@ -25773,12 +25819,43 @@ page-application .floatingButton {
   margin: 5px;
 }
 
+page-flat ion-content {
+  border-radius: 10px 10px 0 0 !important;
+}
+
+page-flat .header-img {
+  height: 50vh;
+  width: 100vw;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../assets/1.jpg");
+}
+
+page-flat .title-cta {
+  font-size: 12px;
+  color: red;
+  text-align: right;
+}
+
+page-flat #map2 {
+  height: 30%;
+  background-color: transparent !important;
+  border-radius: 10%;
+  margin: 10px auto;
+}
+
 page-home .flat-slider {
   height: 100vh;
 }
 
 page-home ion-card {
   border-radius: 3% !important;
+}
+
+page-home .subtitle span {
+  color: lightgray;
+  font-size: 12px;
+  margin: 0 0 0 15px;
 }
 
 page-home .top {
@@ -25801,33 +25878,21 @@ page-home .bottom-arrow {
 }
 
 page-home .message-slider {
-  height: 100px;
+  height: 180px;
 }
 
 page-home .message-slider ion-slide {
-  height: 100px !important;
-  width: auto !important;
+  height: 180px !important;
 }
 
 page-home .message-slider ion-slide ion-card {
   height: 30vw;
-  width: 30vw;
+  width: 60vw;
   border-radius: 10% !important;
 }
 
-page-home .fit-circle::before {
-  content: "";
-  border: 2.5px solid red;
-  width: 8px;
-  height: 8px;
-  border-radius: 100%;
-  display: inline-block;
-  margin: 5px 5px 0 0;
-  font-size: 16px;
-}
-
 page-home .wg-ad {
-  height: 30vh;
+  height: 14vh;
   background-image: url("../../assets/1.jpg");
   background-position: center;
   background-size: cover;
@@ -25835,6 +25900,25 @@ page-home .wg-ad {
 
 page-home .wg-ad .card-title {
   top: 75%;
+}
+
+page-home .edit-wg p {
+  font-size: 12px;
+  text-align: left;
+}
+
+page-home .edit-wg p:first-child {
+  font-weight: bold;
+}
+
+page-home .edit-wg:after {
+  content: '';
+  width: 70%;
+  height: 12px;
+  background: red;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
 }
 
 page-home .message {
@@ -25847,15 +25931,18 @@ page-home .message {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  padding: 8px;
+  font-size: 12px;
+  text-align: left;
 }
 
-page-home .age span {
-  height: 50px !important;
-}
-
-page-home #age {
-  font-size: 24px;
+page-home .message div:first-child {
   font-weight: bold;
+  margin: 0 0 5px 0;
 }
 
 page-home .occupation {
@@ -25920,14 +26007,6 @@ page-flat .flat-slider ion-slide ion-card {
   background-size: cover;
 }
 
-page-flat #map {
-  width: calc(100% - 20px);
-  height: 40%;
-  background-color: transparent !important;
-  border-radius: 10%;
-  margin: 10px auto;
-}
-
 page-flat .flat {
   border-radius: 10%;
   margin-top: 2.5%;
@@ -25940,6 +26019,14 @@ page-flat .floatingButton {
   margin: 5px;
 }
 
+page-flat #map {
+  width: calc(100% - 20px);
+  height: 40%;
+  background-color: transparent !important;
+  border-radius: 10%;
+  margin: 10px auto;
+}
+
 page-questionnaire .answer {
   height: 25vh;
 }
@@ -25949,15 +26036,39 @@ page-questionnaire .question {
   top: 5%;
 }
 
-page-start .title {
-  font-size: 48px;
-  text-align: center;
+page-start .logo {
+  background-image: url("../../assets/Logo.svg");
+  width: 100vw;
+  height: 50vw;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-page-start .continue-info {
+page-start .bg {
+  background-image: url("../../assets/bg.png");
+  background-size: cover;
+  background-position: center;
+}
+
+page-start .title {
+  font-size: 36px;
+  text-align: center;
+  color: #fff;
+}
+
+page-start .bottom-btn {
   position: absolute;
   bottom: 5%;
-  display: block;
   text-align: center;
-  width: 100%;
+  width: 90%;
+}
+
+page-start button {
+  margin: 0 0 10px 0 !important;
+  font-weight: bold;
+  color: #fff !important;
+}
+
+page-start button:first-of-type {
+  margin: 0 !important;
 }
