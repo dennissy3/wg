@@ -14,6 +14,10 @@ page-home {
     margin: 0 0 0 15px;
   }
 
+  .subtitle.conversation {
+    margin: 0 0 6px 12px;
+  }
+
   .top {
     align-items: flex-start;
   }
@@ -31,16 +35,17 @@ page-home {
   }
 
   .message-slider {
-    height: 180px;
+    height: 40vh !important;
   }
 
   .message-slider ion-slide {
-    height: 180px !important;
+    height: 40vh !important;
+    margin-top: 30px !important;
   }
 
   .message-slider ion-slide ion-card {
-    height: 30vw;
-    width: 60vw;
+    height: 30vw !important;
+    width: 60vw !important;
     border-radius:10% !important;
   }
 
@@ -89,7 +94,6 @@ page-home {
     font-weight: bold;
     margin: 0 0 5px 0;
   }
-
 
   .occupation {
     position: absolute;

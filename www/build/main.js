@@ -1,23 +1,118 @@
 webpackJsonp([0],{
 
-/***/ 110:
-/***/ (function(module, exports) {
+/***/ 100:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-function webpackEmptyAsyncContext(req) {
-	// Here Promise.resolve().then() is used instead of new Promise() to prevent
-	// uncatched exception popping up in devtools
-	return Promise.resolve().then(function() {
-		throw new Error("Cannot find module '" + req + "'.");
-	});
-}
-webpackEmptyAsyncContext.keys = function() { return []; };
-webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
-module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 110;
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular_index__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modal_flatModal_flat__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modal_peopleModal_people__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__flat_flat__ = __webpack_require__(200);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+var HomePage = (function () {
+    function HomePage(navCtrl, modalCtrl) {
+        this.navCtrl = navCtrl;
+        this.modalCtrl = modalCtrl;
+        this.adOnline = true;
+        this.applicants = [{
+                "name": "David",
+                "age": 25,
+                "job": "Architect",
+                "fit": 75
+            },
+            {
+                "name": "Kina",
+                "age": 21,
+                "job": "Student",
+                "fit": 90
+            },
+            {
+                "name": "Maleen",
+                "age": 29,
+                "job": "Designer",
+                "fit": 42
+            },
+            {
+                "name": "Max",
+                "age": 23,
+                "job": "Sales",
+                "fit": 23
+            }
+        ];
+        this.flats = [{
+                "imgs": ["1", "2", "3"],
+                "location": "Neukölln",
+                "people": ["Maja", "Karlo"],
+                "nickname": "Neuköllnies"
+            },
+            {
+                "imgs": ["4", "5", "6"],
+                "location": "Prenzlauer Berg",
+                "people": ["Phreddy", "Susi"],
+                "nickname": "Wang Bang"
+            }
+        ];
+    }
+    HomePage.prototype.presentFlatModal = function (f) {
+        var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_3__modal_flatModal_flat__["a" /* FlatModal */], { data: f });
+        modal.present();
+    };
+    HomePage.prototype.presentPeopleModal = function () {
+        var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_4__modal_peopleModal_people__["a" /* PeopleModal */]);
+        modal.present();
+    };
+    HomePage.prototype.swipe = function (event) {
+        console.log('Swipe Down', event);
+        this.move(0);
+    };
+    HomePage.prototype.move = function (index) {
+        if (index == 0) {
+            this.slides.slidePrev(500);
+        }
+        else {
+            this.slides.slideNext(500);
+        }
+    };
+    HomePage.prototype.openEditFlat = function (f) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__flat_flat__["a" /* FlatPage */]);
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Slides */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Slides */])
+    ], HomePage.prototype, "slides", void 0);
+    HomePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-home',template:/*ion-inline-start:"/Development/wg/blank/src/pages/home/home.html"*/'<ion-content class="card-background-page" no-bounce>\n  <ion-slides direction="vertical" initialSlide="1">\n    <ion-slide class="top">\n      <p class="name title">Hey Karlo!</p>\n\n\n      <ion-card class="edit-wg" (click)="openEditFlat()">\n        <div class="wg-ad"></div>\n        <ion-card-content>\n          <p>Finalize your listing</p>\n          <p>Your room is 70% done</p>\n        </ion-card-content>\n      </ion-card>\n\n\n      <p class="subtitle conversation">Your Conversations<span>See All</span></p>\n      <ion-slides slidesPerView="1.5" class="message-slider">\n        <ion-slide *ngFor="let a of applicants" (click)="presentPeopleModal()">\n          <div class="head-img small" id="karlo"></div>\n          <ion-card class="message">\n            <div>{{a.name}}</div>\n            <div>Hey Karlo, I really love the room! Do you wanna hang...</div>\n            <span class="occupation">12th January</span>\n          </ion-card>\n        </ion-slide>\n      </ion-slides>\n\n      <p class="title bottom-arrow" (click)="move(1)"><ion-icon name="arrow-up"></ion-icon></p>\n    </ion-slide>\n\n    <ion-slide>\n      <ion-slides swipeAll (swipedown)="swipe($event)" class="flat-slider">\n\n        <ion-slide *ngFor="let f of flats" swipeAll (swipeup)="presentFlatModal(f)" >\n          <p class="title" (click)="move(0)"><ion-icon name="arrow-down"></ion-icon></p>\n          <ion-card (click)="presentFlatModal(f)">\n            <img src="assets/{{f.imgs[0]}}.jpg"/>\n            <div class="card-title">{{f.location}}</div>\n            <div class="card-subtitle">with {{f.people[0]}} and {{f.people[1]}}</div>\n          </ion-card>\n        </ion-slide>\n\n      </ion-slides>\n    </ion-slide>\n  </ion-slides>\n</ion-content>\n'/*ion-inline-end:"/Development/wg/blank/src/pages/home/home.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular_index__["d" /* ModalController */]])
+    ], HomePage);
+    return HomePage;
+}());
+
+//# sourceMappingURL=home.js.map
 
 /***/ }),
 
-/***/ 151:
+/***/ 111:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -30,7 +125,24 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 151;
+webpackEmptyAsyncContext.id = 111;
+
+/***/ }),
+
+/***/ 152:
+/***/ (function(module, exports) {
+
+function webpackEmptyAsyncContext(req) {
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncatched exception popping up in devtools
+	return Promise.resolve().then(function() {
+		throw new Error("Cannot find module '" + req + "'.");
+	});
+}
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = 152;
 
 /***/ }),
 
@@ -38,11 +150,10 @@ webpackEmptyAsyncContext.id = 151;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FlatModal; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StartPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular_index__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__application_application__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__questionnaire_questionnaire__ = __webpack_require__(196);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -55,66 +166,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-
-
-
-var FlatModal = (function () {
-    function FlatModal(navCtrl, viewCtrl, params) {
+var StartPage = (function () {
+    function StartPage(navCtrl) {
         this.navCtrl = navCtrl;
-        this.viewCtrl = viewCtrl;
-        this.params = params;
-        this.markers = [];
-        this.flat = params.get('data');
-        this.imgs = this.flat.imgs;
-        console.log(this.flat);
     }
-    FlatModal.prototype.presentApplication = function (event) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__application_application__["a" /* ApplicationPage */]);
+    StartPage.prototype.goToQuestionnaire = function () {
+        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_2__questionnaire_questionnaire__["a" /* QuestionnairePage */]);
     };
-    FlatModal.prototype.ngOnInit = function () {
-        this.initMap();
-    };
-    FlatModal.prototype.initMap = function () {
-        var point = { lat: 52.532729, lng: 13.409080 };
-        var divMap = document.getElementById('map');
-        this.map = new google.maps.Map(divMap, {
-            center: point,
-            zoom: 15,
-            disableDefaultUI: true,
-            draggable: false,
-            zoomControl: true
-        });
-        //create marker
-        var myLatLng = new google.maps.LatLng(52.532729, 13.409080);
-        var marker = new google.maps.Marker({
-            map: this.map,
-            position: myLatLng
-        });
-        this.markers.push(marker);
-    };
-    FlatModal.prototype.dismiss = function (event) {
-        console.log(event);
-        this.viewCtrl.dismiss();
-    };
-    FlatModal.prototype.hack = function (val) {
-        return Array.from(val);
-    };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Slides */]),
-        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Slides */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Slides */]) === "function" && _a || Object)
-    ], FlatModal.prototype, "slides", void 0);
-    FlatModal = __decorate([
+    StartPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-flat',template:/*ion-inline-start:"/Development/wg/blank/src/pages/modal/flatModal/flat.html"*/'<ion-header swipeAll (swipedown)="dismiss($event)">\n  <ion-navbar>\n    <ion-buttons start>\n      <button ion-button icon-only (click)="dismiss()">\n        <ion-icon name="arrow-back"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="flat card-background-page">\n  <p class="title">Neuköllnies</p>\n\n  <div class="flatmates">\n    <div class="flatmate">\n      <div class="head" id="maja"></div>\n      <p>Maja</p>\n    </div>\n    <div class="flatmate">\n      <div class="head" id="karlo"></div>\n      <p>Karlo</p>\n    </div>\n  </div>\n\n  <ion-slides class="flat-slider" slidesPerView="1.5">\n    {{f}}\n    <ion-slide *ngFor="let i of imgs">\n      <ion-card [style.backgroundImage]="\'url(../../../assets/\' + i + \'.jpg)\'">\n      </ion-card>\n    </ion-slide>\n  </ion-slides>\n\n  <div id="map"></div>\n  <button ion-button color="cta" class="floatingButton" mode="ios" full (click)="presentApplication($event)">Apply</button>\n\n</ion-content>\n'/*ion-inline-end:"/Development/wg/blank/src/pages/modal/flatModal/flat.html"*/
+            selector: 'page-start',template:/*ion-inline-start:"/Development/wg/blank/src/pages/start/start.html"*/'<!--<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Ionic Blank\n    </ion-title>\n  </ion-navbar>\n</ion-header>-->\n\n<ion-content class="bg" padding>\n  <div class="logo"></div>\n  <p class="title">Welcome to R____M</p>\n\n  <div class="bottom-btn">\n    <button ion-button clear block>Sign in</button>\n    <button ion-button round block class="gradient" (click)="goToQuestionnaire()">I\'m offering</button>\n    <button ion-button round block class="gradient" (click)="goToQuestionnaire()">I\'m searching</button>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Development/wg/blank/src/pages/start/start.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular_index__["i" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular_index__["i" /* ViewController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular_index__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular_index__["f" /* NavParams */]) === "function" && _d || Object])
-    ], FlatModal);
-    return FlatModal;
-    var _a, _b, _c, _d;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+    ], StartPage);
+    return StartPage;
 }());
 
-//# sourceMappingURL=flat.js.map
+//# sourceMappingURL=start.js.map
 
 /***/ }),
 
@@ -122,173 +190,11 @@ var FlatModal = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ApplicationPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular_index__ = __webpack_require__(9);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var ApplicationPage = (function () {
-    function ApplicationPage(navCtrl) {
-        this.navCtrl = navCtrl;
-        this.applicationData = {};
-        //this.slides.lockSwipeToNext(true)
-    }
-    ApplicationPage.prototype.answer = function (question, answer) {
-        //todo: store data
-        this.slides.slideNext(500);
-        var maxIndex = this.slides.length();
-        if (question + 1 == maxIndex) {
-            this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */]);
-        }
-    };
-    ApplicationPage.prototype.submitApplication = function (applicationData) {
-        //todo: send data to server
-    };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_3_ionic_angular_index__["h" /* Slides */]),
-        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular_index__["h" /* Slides */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular_index__["h" /* Slides */]) === "function" && _a || Object)
-    ], ApplicationPage.prototype, "slides", void 0);
-    ApplicationPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-application',template:/*ion-inline-start:"/Development/wg/blank/src/pages/application/application.html"*/'<!--<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Ionic Blank\n    </ion-title>\n  </ion-navbar>\n</ion-header>-->\n\n<ion-content>\n  <ion-slides pager>\n\n    <ion-slide>\n        <p class="question">When do you want to meet your potential new roommates?</p>\n        <ion-item>\n          <ion-slides pager class="dateSlider">\n            <ion-slide class="dateSlide">\n              <p class="date"> 18th January 2018</p>\n              <p class="link"> Check Calendar </p>\n            </ion-slide>\n            <ion-slide class="dateSlide">\n              <p class="date"> 20th January 2018</p>\n              <p class="link"> Check Calendar </p>\n            </ion-slide>\n            <ion-slide class="dateSlide">\n              <p class="date"> 21th January 2018</p>\n              <p class="link"> Check Calendar </p>\n            </ion-slide>\n          </ion-slides>\n        </ion-item>\n        <button ion-button color="cta" class="floatingButton" mode="ios" full (click)="answer(0,\'date\')">Next</button>\n    </ion-slide>\n\n    <ion-slide>\n      <p class="question">Add a little message to your application for Maja</p>\n      <ion-card class="answer">\n       <ion-textarea  \n        placeholder="Hi Maya looking forward to meet you..."\n       >  \n       </ion-textarea>\n      </ion-card>\n       <button ion-button color="cta" class="floatingButton" mode="ios" full (click)="submitApplication($event)">Send</button>\n    </ion-slide>\n\n    <ion-slide>\n    <p class="question"> It\'s Done!</p>\n    <p>We sent your application to Maya and will notify you as soon as we have news!</p>\n    </ion-slide>\n\n\n  </ion-slides>\n</ion-content>\n\n'/*ion-inline-end:"/Development/wg/blank/src/pages/application/application.html"*/
-        }),
-        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _b || Object])
-    ], ApplicationPage);
-    return ApplicationPage;
-    var _a, _b;
-}());
-
-//# sourceMappingURL=application.js.map
-
-/***/ }),
-
-/***/ 197:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PeopleModal; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular_index__ = __webpack_require__(9);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var PeopleModal = (function () {
-    function PeopleModal(navCtrl, viewCtrl) {
-        this.navCtrl = navCtrl;
-        this.viewCtrl = viewCtrl;
-    }
-    PeopleModal.prototype.dismiss = function (event) {
-        console.log(event);
-        this.viewCtrl.dismiss();
-    };
-    PeopleModal = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-people',template:/*ion-inline-start:"/Development/wg/blank/src/pages/modal/peopleModal/people.html"*/'<ion-header swipeAll (swipedown)="dismiss($event)">\n  <ion-navbar>\n    <ion-buttons start>\n      <button ion-button icon-only (click)="dismiss()">\n        <ion-icon name="arrow-back"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n\n</ion-content>\n'/*ion-inline-end:"/Development/wg/blank/src/pages/modal/peopleModal/people.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular_index__["i" /* ViewController */]])
-    ], PeopleModal);
-    return PeopleModal;
-}());
-
-//# sourceMappingURL=people.js.map
-
-/***/ }),
-
-/***/ 198:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FlatPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var FlatPage = (function () {
-    function FlatPage(navCtrl) {
-        this.navCtrl = navCtrl;
-        this.markers = [];
-    }
-    FlatPage.prototype.ngOnInit = function () {
-        this.initMap();
-    };
-    FlatPage.prototype.initMap = function () {
-        var point = { lat: 52.532729, lng: 13.409080 };
-        var divMap = document.getElementById('map2');
-        this.map = new google.maps.Map(divMap, {
-            center: point,
-            zoom: 15,
-            disableDefaultUI: true,
-            draggable: false,
-            zoomControl: false
-        });
-        /*
-            //create marker
-            let myLatLng = new google.maps.LatLng(52.532729,13.409080);
-            var marker = new google.maps.Marker({
-              map: this.map,
-              position: myLatLng
-            });
-            this.markers.push(marker);
-        */
-    };
-    FlatPage.prototype.close = function () {
-        this.navCtrl.pop();
-    };
-    FlatPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-flat',template:/*ion-inline-start:"/Development/wg/blank/src/pages/flat/flat.html"*/'<ion-content swipeAll (swipedown)="close()" (swipeleft)="close()">\n  <div class="header-img"></div>\n  <div padding>\n    <p class="title">Karlo\'s room <span class="title-cta">Edit room</span></p>\n    <p>Hey there, welcome to our apartment, we love to cook and have nights in together but also love to get royaly fucked up and drink ourselves half to death. Generally we love all people</p>\n    <p class="subtitle">Roommates</p>\n    <div class="head-img medium" id="karlo"></div>\n    <div class="head-img medium" id="empty">+</div>\n\n    <p class="subtitle">Location</p>\n\n    <div id="map2"></div>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Development/wg/blank/src/pages/flat/flat.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
-    ], FlatPage);
-    return FlatPage;
-}());
-
-//# sourceMappingURL=flat.js.map
-
-/***/ }),
-
-/***/ 199:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return QuestionnairePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular_index__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular_index__ = __webpack_require__(8);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -390,13 +296,261 @@ var QuestionnairePage = (function () {
 
 /***/ }),
 
+/***/ 197:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FlatModal; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular_index__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__application_application__ = __webpack_require__(198);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var FlatModal = (function () {
+    function FlatModal(navCtrl, viewCtrl, params) {
+        this.navCtrl = navCtrl;
+        this.viewCtrl = viewCtrl;
+        this.params = params;
+        this.markers = [];
+        this.flat = params.get('data');
+        this.imgs = this.flat.imgs;
+        console.log(this.flat);
+    }
+    FlatModal.prototype.presentApplication = function (event) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__application_application__["a" /* ApplicationPage */]);
+    };
+    FlatModal.prototype.ngOnInit = function () {
+        this.initMap();
+    };
+    FlatModal.prototype.initMap = function () {
+        var point = { lat: 52.532729, lng: 13.409080 };
+        var divMap = document.getElementById('map');
+        this.map = new google.maps.Map(divMap, {
+            center: point,
+            zoom: 15,
+            disableDefaultUI: true,
+            draggable: false,
+            zoomControl: true
+        });
+        //create marker
+        var myLatLng = new google.maps.LatLng(52.532729, 13.409080);
+        var marker = new google.maps.Marker({
+            map: this.map,
+            position: myLatLng
+        });
+        this.markers.push(marker);
+    };
+    FlatModal.prototype.dismiss = function (event) {
+        console.log(event);
+        this.viewCtrl.dismiss();
+    };
+    FlatModal.prototype.hack = function (val) {
+        return Array.from(val);
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Slides */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Slides */])
+    ], FlatModal.prototype, "slides", void 0);
+    FlatModal = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-flat',template:/*ion-inline-start:"/Development/wg/blank/src/pages/modal/flatModal/flat.html"*/'<ion-header swipeAll (swipedown)="dismiss($event)">\n  <ion-navbar>\n    <ion-buttons start>\n      <button ion-button icon-only (click)="dismiss()">\n        <ion-icon name="arrow-back"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="flat card-background-page">\n  <p padding class="title">Neuköllnies</p>\n\n  <div padding class="flatmates">\n    <div class="flatmate">\n      <div class="head" id="maja"></div>\n      <p>Maja</p>\n    </div>\n    <div class="flatmate">\n      <div class="head" id="karlo"></div>\n      <p>Karlo</p>\n    </div>\n  </div>\n\n  <ion-slides class="flat-slider" slidesPerView="1.5">\n    {{f}}\n    <ion-slide *ngFor="let i of imgs">\n      <ion-card [style.backgroundImage]="\'url(../../../assets/\' + i + \'.jpg)\'">\n      </ion-card>\n    </ion-slide>\n  </ion-slides>\n\n  <div id="map"></div>\n  <button ion-button color="cta" class="floatingButton" mode="ios" full (click)="presentApplication($event)">Apply</button>\n\n</ion-content>\n'/*ion-inline-end:"/Development/wg/blank/src/pages/modal/flatModal/flat.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular_index__["i" /* ViewController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular_index__["f" /* NavParams */]])
+    ], FlatModal);
+    return FlatModal;
+}());
+
+//# sourceMappingURL=flat.js.map
+
+/***/ }),
+
+/***/ 198:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ApplicationPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular_index__ = __webpack_require__(8);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var ApplicationPage = (function () {
+    function ApplicationPage(navCtrl) {
+        this.navCtrl = navCtrl;
+        this.applicationData = {};
+        //this.slides.lockSwipeToNext(true)
+    }
+    ApplicationPage.prototype.answer = function (question, answer) {
+        //todo: store data
+        this.slides.slideNext(500);
+        var maxIndex = this.slides.length();
+        if (question + 1 == maxIndex) {
+            this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */]);
+        }
+    };
+    ApplicationPage.prototype.submitApplication = function (applicationData) {
+        //todo: send data to server
+        this.slides.slideNext(500);
+    };
+    ApplicationPage.prototype.returnToDash = function () {
+        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */]);
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_3_ionic_angular_index__["h" /* Slides */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_3_ionic_angular_index__["h" /* Slides */])
+    ], ApplicationPage.prototype, "slides", void 0);
+    ApplicationPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-application',template:/*ion-inline-start:"/Development/wg/blank/src/pages/application/application.html"*/'<!--<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Ionic Blank\n    </ion-title>\n  </ion-navbar>\n</ion-header>-->\n\n<ion-content>\n  <ion-slides pager>\n\n    <ion-slide>\n        <p class="question">When do you want to meet your potential new roommates?</p>\n        <ion-item>\n          <ion-slides pager class="dateSlider">\n            <ion-slide class="dateSlide">\n              <p class="date"> 18th January 2018</p>\n              <p class="link"> Check Calendar </p>\n            </ion-slide>\n            <ion-slide class="dateSlide">\n              <p class="date"> 20th January 2018</p>\n              <p class="link"> Check Calendar </p>\n            </ion-slide>\n            <ion-slide class="dateSlide">\n              <p class="date"> 21th January 2018</p>\n              <p class="link"> Check Calendar </p>\n            </ion-slide>\n          </ion-slides>\n        </ion-item>\n        <button ion-button color="cta" class="floatingButton" mode="ios" full (click)="answer(0,\'date\')">Next</button>\n    </ion-slide>\n\n    <ion-slide>\n      <p class="question">Add a little message to your application for Maja</p>\n      <ion-card class="answer">\n       <ion-textarea  \n        placeholder="Hi Maya looking forward to meet you..."\n       >  \n       </ion-textarea>\n      </ion-card>\n       <button ion-button color="cta" class="floatingButton" mode="ios" full (click)="submitApplication($event)">Send</button>\n    </ion-slide>\n\n    <ion-slide>\n    <p class="question"> It\'s Done!</p>\n    <p>We sent your application to Maya and will notify you as soon as we have news!</p>\n    <button ion-button color="cta" class="floatingButton" mode="ios" full (click)="returnToDash($event)">Alright sounds good!</button>\n    </ion-slide>\n\n\n  </ion-slides>\n</ion-content>\n\n'/*ion-inline-end:"/Development/wg/blank/src/pages/application/application.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+    ], ApplicationPage);
+    return ApplicationPage;
+}());
+
+//# sourceMappingURL=application.js.map
+
+/***/ }),
+
+/***/ 199:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PeopleModal; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular_index__ = __webpack_require__(8);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var PeopleModal = (function () {
+    function PeopleModal(navCtrl, viewCtrl) {
+        this.navCtrl = navCtrl;
+        this.viewCtrl = viewCtrl;
+    }
+    PeopleModal.prototype.dismiss = function (event) {
+        console.log(event);
+        this.viewCtrl.dismiss();
+    };
+    PeopleModal = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-people',template:/*ion-inline-start:"/Development/wg/blank/src/pages/modal/peopleModal/people.html"*/'<ion-header swipeAll (swipedown)="dismiss($event)">\n  <ion-navbar>\n    <ion-buttons start>\n      <button ion-button icon-only (click)="dismiss()">\n        <ion-icon name="arrow-back"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n\n</ion-content>\n'/*ion-inline-end:"/Development/wg/blank/src/pages/modal/peopleModal/people.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular_index__["i" /* ViewController */]])
+    ], PeopleModal);
+    return PeopleModal;
+}());
+
+//# sourceMappingURL=people.js.map
+
+/***/ }),
+
 /***/ 200:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FlatPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var FlatPage = (function () {
+    function FlatPage(navCtrl) {
+        this.navCtrl = navCtrl;
+        this.markers = [];
+    }
+    FlatPage.prototype.ngOnInit = function () {
+        this.initMap();
+    };
+    FlatPage.prototype.initMap = function () {
+        var point = { lat: 52.532729, lng: 13.409080 };
+        var divMap = document.getElementById('map2');
+        this.map = new google.maps.Map(divMap, {
+            center: point,
+            zoom: 15,
+            disableDefaultUI: true,
+            draggable: false,
+            zoomControl: false
+        });
+        /*
+            //create marker
+            let myLatLng = new google.maps.LatLng(52.532729,13.409080);
+            var marker = new google.maps.Marker({
+              map: this.map,
+              position: myLatLng
+            });
+            this.markers.push(marker);
+        */
+    };
+    FlatPage.prototype.close = function () {
+        this.navCtrl.pop();
+    };
+    FlatPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-flat',template:/*ion-inline-start:"/Development/wg/blank/src/pages/flat/flat.html"*/'<ion-content swipeAll (swipedown)="close()" (swipeleft)="close()">\n  <div class="header-img"></div>\n  <div padding>\n    <p class="title">Karlo\'s room <span class="title-cta">Edit room</span></p>\n    <p>Hey there, welcome to our apartment, we love to cook and have nights in together but also love to get royaly fucked up and drink ourselves half to death. Generally we love all people</p>\n    <p class="subtitle">Roommates</p>\n    <div class="head-img medium" id="karlo"></div>\n    <div class="head-img medium" id="empty">+</div>\n\n    <p class="subtitle">Location</p>\n\n    <div id="map2"></div>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Development/wg/blank/src/pages/flat/flat.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+    ], FlatPage);
+    return FlatPage;
+}());
+
+//# sourceMappingURL=flat.js.map
+
+/***/ }),
+
+/***/ 201:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(201);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(224);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(225);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -404,31 +558,33 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 224:
+/***/ 225:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(191);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(192);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(194);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(275);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_modal_flatModal_flat__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_start_start__ = __webpack_require__(276);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_questionnaire_questionnaire__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_application_application__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(276);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_modal_flatModal_flat__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_start_start__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_questionnaire_questionnaire__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_application_application__ = __webpack_require__(198);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_ionic_swipe_all_dist_index__ = __webpack_require__(277);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_modal_peopleModal_people__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_flat_flat__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_modal_peopleModal_people__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_flat_flat__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_photo_photo__ = __webpack_require__(281);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -456,7 +612,8 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_9__pages_questionnaire_questionnaire__["a" /* QuestionnairePage */],
                 __WEBPACK_IMPORTED_MODULE_12__pages_modal_peopleModal_people__["a" /* PeopleModal */],
                 __WEBPACK_IMPORTED_MODULE_10__pages_application_application__["a" /* ApplicationPage */],
-                __WEBPACK_IMPORTED_MODULE_13__pages_flat_flat__["a" /* FlatPage */]
+                __WEBPACK_IMPORTED_MODULE_13__pages_flat_flat__["a" /* FlatPage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_photo_photo__["a" /* PhotoPage */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -474,7 +631,8 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_9__pages_questionnaire_questionnaire__["a" /* QuestionnairePage */],
                 __WEBPACK_IMPORTED_MODULE_12__pages_modal_peopleModal_people__["a" /* PeopleModal */],
                 __WEBPACK_IMPORTED_MODULE_10__pages_application_application__["a" /* ApplicationPage */],
-                __WEBPACK_IMPORTED_MODULE_13__pages_flat_flat__["a" /* FlatPage */]
+                __WEBPACK_IMPORTED_MODULE_13__pages_flat_flat__["a" /* FlatPage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_photo_photo__["a" /* PhotoPage */]
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
@@ -490,16 +648,16 @@ var AppModule = (function () {
 
 /***/ }),
 
-/***/ 275:
+/***/ 276:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(194);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(191);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_start_start__ = __webpack_require__(276);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(192);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(100);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -516,7 +674,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var MyApp = (function () {
     function MyApp(platform, statusBar, splashScreen) {
-        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_start_start__["a" /* StartPage */];
+        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */];
         platform.ready().then(function () {
             // Okay, so the platform is ready and our plugins are available.
             // Here you can do any higher level native things you might need.
@@ -537,57 +695,15 @@ var MyApp = (function () {
 
 /***/ }),
 
-/***/ 276:
+/***/ 281:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StartPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PhotoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__questionnaire_questionnaire__ = __webpack_require__(199);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var StartPage = (function () {
-    function StartPage(navCtrl) {
-        this.navCtrl = navCtrl;
-    }
-    StartPage.prototype.goToQuestionnaire = function () {
-        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_2__questionnaire_questionnaire__["a" /* QuestionnairePage */]);
-    };
-    StartPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-start',template:/*ion-inline-start:"/Development/wg/blank/src/pages/start/start.html"*/'<!--<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Ionic Blank\n    </ion-title>\n  </ion-navbar>\n</ion-header>-->\n\n<ion-content class="bg" padding>\n  <div class="logo"></div>\n  <p class="title">Welcome to R____M</p>\n\n  <div class="bottom-btn">\n    <button ion-button clear block>Sign in</button>\n    <button ion-button round block class="gradient" (click)="goToQuestionnaire()">I\'m offering</button>\n    <button ion-button round block class="gradient" (click)="goToQuestionnaire()">I\'m searching</button>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Development/wg/blank/src/pages/start/start.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
-    ], StartPage);
-    return StartPage;
-}());
-
-//# sourceMappingURL=start.js.map
-
-/***/ }),
-
-/***/ 50:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular_index__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modal_flatModal_flat__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modal_peopleModal_people__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__flat_flat__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__ = __webpack_require__(282);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular_index__ = __webpack_require__(8);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -602,92 +718,42 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-
-
-var HomePage = (function () {
-    function HomePage(navCtrl, modalCtrl) {
+var PhotoPage = (function () {
+    function PhotoPage(navCtrl, camera) {
         this.navCtrl = navCtrl;
-        this.modalCtrl = modalCtrl;
-        this.adOnline = true;
-        this.applicants = [{
-                "name": "David",
-                "age": 25,
-                "job": "Architect",
-                "fit": 75
-            },
-            {
-                "name": "Kina",
-                "age": 21,
-                "job": "Student",
-                "fit": 90
-            },
-            {
-                "name": "Maleen",
-                "age": 29,
-                "job": "Designer",
-                "fit": 42
-            },
-            {
-                "name": "Max",
-                "age": 23,
-                "job": "Sales",
-                "fit": 23
-            }
-        ];
-        this.flats = [{
-                "imgs": ["1", "2", "3"],
-                "location": "Neukölln",
-                "people": ["Maja", "Karlo"],
-                "nickname": "Neuköllnies"
-            },
-            {
-                "imgs": ["4", "5", "6"],
-                "location": "Prenzlauer Berg",
-                "people": ["Phreddy", "Susi"],
-                "nickname": "Wang Bang"
-            }
-        ];
+        this.camera = camera;
+        this.options = {
+            quality: 100,
+            destinationType: this.camera.DestinationType.DATA_URL,
+            encodingType: this.camera.EncodingType.JPEG,
+            mediaType: this.camera.MediaType.PICTURE
+        };
+        this.camera.getPicture(this.options).then(function (imageData) {
+            // imageData is either a base64 encoded string or a file URI
+            // If it's base64:
+            var base64Image = 'data:image/jpeg;base64,' + imageData;
+            //this.navCtrl.setRoot(location)
+        }, function (err) {
+            // Handle error
+        });
     }
-    HomePage.prototype.presentFlatModal = function (f) {
-        var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_3__modal_flatModal_flat__["a" /* FlatModal */], { data: f });
-        modal.present();
-    };
-    HomePage.prototype.presentPeopleModal = function () {
-        var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_4__modal_peopleModal_people__["a" /* PeopleModal */]);
-        modal.present();
-    };
-    HomePage.prototype.swipe = function (event) {
-        console.log('Swipe Down', event);
-        this.move(0);
-    };
-    HomePage.prototype.move = function (index) {
-        if (index == 0) {
-            this.slides.slidePrev(500);
-        }
-        else {
-            this.slides.slideNext(500);
-        }
-    };
-    HomePage.prototype.openEditFlat = function (f) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__flat_flat__["a" /* FlatPage */]);
-    };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Slides */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Slides */])
-    ], HomePage.prototype, "slides", void 0);
-    HomePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_3_ionic_angular_index__["h" /* Slides */]),
+        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular_index__["h" /* Slides */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular_index__["h" /* Slides */]) === "function" && _a || Object)
+    ], PhotoPage.prototype, "slides", void 0);
+    PhotoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Development/wg/blank/src/pages/home/home.html"*/'<ion-content class="card-background-page" no-bounce>\n  <ion-slides direction="vertical" initialSlide="1">\n    <ion-slide class="top">\n      <p class="name title">Hey Karlo!</p>\n\n\n      <ion-card class="edit-wg" (click)="openEditFlat()">\n        <div class="wg-ad"></div>\n        <ion-card-content>\n          <p>Finalize your listing</p>\n          <p>Your room is 70% done</p>\n        </ion-card-content>\n      </ion-card>\n\n\n      <p class="subtitle">Your Conversations<span>See All</span></p>\n      <ion-slides slidesPerView="1.5" class="message-slider">\n        <ion-slide *ngFor="let a of applicants" (click)="presentPeopleModal()">\n          <div class="head-img small" id="karlo"></div>\n          <ion-card class="message">\n            <div>{{a.name}}</div>\n            <div>Hey Karlo, I really love the room! Do you wanna hang...</div>\n            <span class="occupation">12th January</span>\n          </ion-card>\n        </ion-slide>\n      </ion-slides>\n\n\n      <p class="title bottom-arrow" (click)="move(1)"><ion-icon name="arrow-up"></ion-icon></p>\n    </ion-slide>\n\n    <ion-slide>\n      <ion-slides swipeAll (swipedown)="swipe($event)" class="flat-slider">\n\n        <ion-slide *ngFor="let f of flats" swipeAll (swipeup)="presentFlatModal(f)" >\n          <p class="title" (click)="move(0)"><ion-icon name="arrow-down"></ion-icon></p>\n          <ion-card (click)="presentFlatModal(f)">\n            <img src="assets/{{f.imgs[0]}}.jpg"/>\n            <div class="card-title">{{f.location}}</div>\n            <div class="card-subtitle">with {{f.people[0]}} and {{f.people[1]}}</div>\n          </ion-card>\n        </ion-slide>\n\n      </ion-slides>\n    </ion-slide>\n  </ion-slides>\n</ion-content>\n'/*ion-inline-end:"/Development/wg/blank/src/pages/home/home.html"*/
+            selector: 'page-photo',template:/*ion-inline-start:"/Development/wg/blank/src/pages/photo/photo.html"*/'<ion-content class="card-background-page" no-bounce>\n\n</ion-content>\n'/*ion-inline-end:"/Development/wg/blank/src/pages/photo/photo.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular_index__["d" /* ModalController */]])
-    ], HomePage);
-    return HomePage;
+        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__["a" /* Camera */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__["a" /* Camera */]) === "function" && _c || Object])
+    ], PhotoPage);
+    return PhotoPage;
+    var _a, _b, _c;
 }());
 
-//# sourceMappingURL=home.js.map
+//# sourceMappingURL=photo.js.map
 
 /***/ })
 
-},[200]);
+},[201]);
 //# sourceMappingURL=main.js.map

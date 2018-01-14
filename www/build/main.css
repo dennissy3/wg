@@ -25678,6 +25678,10 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+[padding] {
+  padding: 12px !important;
+}
+
 ion-card {
   border-radius: 10% !important;
 }
@@ -25858,6 +25862,10 @@ page-home .subtitle span {
   margin: 0 0 0 15px;
 }
 
+page-home .subtitle.conversation {
+  margin: 0 0 6px 12px;
+}
+
 page-home .top {
   -webkit-box-align: start;
   -webkit-align-items: flex-start;
@@ -25878,16 +25886,17 @@ page-home .bottom-arrow {
 }
 
 page-home .message-slider {
-  height: 180px;
+  height: 40vh !important;
 }
 
 page-home .message-slider ion-slide {
-  height: 180px !important;
+  height: 40vh !important;
+  margin-top: 30px !important;
 }
 
 page-home .message-slider ion-slide ion-card {
-  height: 30vw;
-  width: 60vw;
+  height: 30vw !important;
+  width: 60vw !important;
   border-radius: 10% !important;
 }
 
@@ -26025,6 +26034,99 @@ page-flat #map {
   background-color: transparent !important;
   border-radius: 10%;
   margin: 10px auto;
+}
+
+page-home .flat-slider {
+  height: 100vh;
+}
+
+page-home ion-card {
+  border-radius: 3% !important;
+}
+
+page-home .top {
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+page-home .name {
+  text-align: left;
+}
+
+page-home .bottom-arrow {
+  position: absolute;
+  bottom: 2%;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+
+page-home .message-slider {
+  height: 100px;
+}
+
+page-home .message-slider ion-slide {
+  height: 100px !important;
+  width: auto !important;
+}
+
+page-home .message-slider ion-slide ion-card {
+  height: 30vw;
+  width: 30vw;
+  border-radius: 10% !important;
+}
+
+page-home .fit-circle::before {
+  content: "";
+  border: 2.5px solid red;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  display: inline-block;
+  margin: 5px 5px 0 0;
+  font-size: 16px;
+}
+
+page-home .wg-ad {
+  height: 30vh;
+  background-image: url("../../assets/1.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+page-home .wg-ad .card-title {
+  top: 75%;
+}
+
+page-home .message {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+page-home .age span {
+  height: 50px !important;
+}
+
+page-home #age {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+page-home .occupation {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  color: #b1b1b1;
+  font-size: 12px;
 }
 
 page-questionnaire .answer {
