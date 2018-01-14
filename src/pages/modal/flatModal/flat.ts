@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Injectable, Pipe} from '@angular/core';
+import { Injectable, Pipe, PipeTransform} from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
@@ -18,12 +18,17 @@ export class FlatModal {
   @ViewChild(Slides) slides: Slides;
   public map: any;
   public markers = [];
+  flat;
 
-  constructor(public navCtrl: NavController, public viewCtrl: ViewController, params: NavParams) {
-    let flat = params.get('data');
-    console.log(JSON.stringify(flat));
+
+  constructor(public navCtrl: NavController, public viewCtrl: ViewController, public params: NavParams) {
+    this.flat = params.get('data');
+    console.log(this.flat[0]);
   }
 
+  presentApplication(event){
+    this.navCtrl.push(ApplicationPage)
+  }
 
   ngOnInit() {
     this.initMap();
@@ -55,8 +60,8 @@ export class FlatModal {
     this.viewCtrl.dismiss();
   }
 
-  presentApplication(event){
-    this.navCtrl.push(ApplicationPage)
+  hack(val) {
+    return Array.from(val);
   }
 }
 
@@ -64,17 +69,18 @@ export class FlatModal {
 export class KeysPipe implements PipeTransform {
   transform(value: any, args?: any[]): any[] {
     // check if "routes" exists
-    if(value) {
+    if (value) {
       // create instance vars to store keys and final output
-      let keyArr: any[] = Object.keys(value),
+      let keyArr:any[] = Object.keys(value),
         dataArr = [];
 
       // loop through the object,
       // pushing values to the return array
-      keyArr.forEach((key: any) => {
+      keyArr.forEach((key:any) => {
         dataArr.push(value[key]);
       });
       // return the resulting array
       return dataArr;
     }
+  }
 }

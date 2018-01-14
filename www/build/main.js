@@ -31,10 +31,14 @@ var FlatModal = (function () {
     function FlatModal(navCtrl, viewCtrl, params) {
         this.navCtrl = navCtrl;
         this.viewCtrl = viewCtrl;
+        this.params = params;
         this.markers = [];
-        var flat = params.get('data');
-        console.log(JSON.stringify(flat));
+        this.flat = params.get('data');
+        console.log(this.flat[0]);
     }
+    FlatModal.prototype.presentApplication = function (event) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__application_application__["a" /* ApplicationPage */]);
+    };
     FlatModal.prototype.ngOnInit = function () {
         this.initMap();
     };
@@ -60,8 +64,8 @@ var FlatModal = (function () {
         console.log(event);
         this.viewCtrl.dismiss();
     };
-    FlatModal.prototype.presentApplication = function (event) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__application_application__["a" /* ApplicationPage */]);
+    FlatModal.prototype.hack = function (val) {
+        return Array.from(val);
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Slides */]),
@@ -163,36 +167,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var ApplicationPage = (function () {
     function ApplicationPage(navCtrl) {
         this.navCtrl = navCtrl;
-        this.metaQuestions = [{
-                "id": "q_location",
-                "question": "Where is your flat located?",
-                "answerType": "text",
-                "answerLabels": ["Address"]
-            }, {
-                "id": "q_rent",
-                "question": "Whats the monthly rent (including everything)?",
-                "answerType": "tel",
-                "answerLabels": ["Rent"]
-            }, {
-                "id": "q_deposit",
-                "question": "How much is the security deposit?",
-                "answerType": "text",
-                "answerLabels": ["Security Deposit"]
-            }, {
-                "id": "q_time_available",
-                "question": "When is the room available and for how long?",
-                "answerType": "text",
-                "answerLabels": ["Date"]
-            }];
+        this.applicationData = {};
         //this.slides.lockSwipeToNext(true)
     }
     ApplicationPage.prototype.answer = function (question, answer) {
+        //todo: store data
         this.slides.slideNext(500);
         var maxIndex = this.slides.length();
         if (question + 1 == maxIndex) {
             this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */]);
         }
-        console.log(this.metaQuestions);
+    };
+    ApplicationPage.prototype.submitApplication = function (applicationData) {
+        //todo: send data to server
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_3_ionic_angular_index__["h" /* Slides */]),
@@ -200,7 +187,7 @@ var ApplicationPage = (function () {
     ], ApplicationPage.prototype, "slides", void 0);
     ApplicationPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-application',template:/*ion-inline-start:"C:\Users\Daniel Burgmann\wg\src\pages\application\application.html"*/'<!--<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Ionic Blank\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>-->\n\n\n\n<ion-content>\n\n  <ion-slides pager>\n\n\n\n    <ion-slide>\n\n        <p class="question">When do you want to meet your potential new roommates?</p>\n\n        <ion-item>\n\n          <ion-slides pager class="dateSlider">\n\n            <ion-slide class="dateSlide">\n\n              <p class="date"> 18th January 2018</p>\n\n              <p class="link"> Check Calendar </p>\n\n            </ion-slide>\n\n            <ion-slide class="dateSlide">\n\n              <p class="date"> 20th January 2018</p>\n\n              <p class="link"> Check Calendar </p>\n\n            </ion-slide>\n\n            <ion-slide class="dateSlide">\n\n              <p class="date"> 21th January 2018</p>\n\n              <p class="link"> Check Calendar </p>\n\n            </ion-slide>\n\n          </ion-slides>\n\n        </ion-item>\n\n        <button ion-button color="cta" class="floatingButton" mode="ios" full (click)="answer(0,\'date\')">Next</button>\n\n    </ion-slide>\n\n\n\n    <ion-slide>\n\n      <p class="question">Add a little message to your application for Maja</p>\n\n      <ion-card class="answer">\n\n       <ion-textarea  \n\n        placeholder="Hi Maya looking forward to meet you..."\n\n       >  \n\n       </ion-textarea>\n\n      </ion-card>\n\n       <button ion-button color="cta" class="floatingButton" mode="ios" full (click)="move($event)">Send</button>\n\n    </ion-slide>\n\n\n\n\n\n  </ion-slides>\n\n</ion-content>\n\n\n\n'/*ion-inline-end:"C:\Users\Daniel Burgmann\wg\src\pages\application\application.html"*/
+            selector: 'page-application',template:/*ion-inline-start:"C:\Users\Daniel Burgmann\wg\src\pages\application\application.html"*/'<!--<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Ionic Blank\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>-->\n\n\n\n<ion-content>\n\n  <ion-slides pager>\n\n\n\n    <ion-slide>\n\n        <p class="question">When do you want to meet your potential new roommates?</p>\n\n        <ion-item>\n\n          <ion-slides pager class="dateSlider">\n\n            <ion-slide class="dateSlide">\n\n              <p class="date"> 18th January 2018</p>\n\n              <p class="link"> Check Calendar </p>\n\n            </ion-slide>\n\n            <ion-slide class="dateSlide">\n\n              <p class="date"> 20th January 2018</p>\n\n              <p class="link"> Check Calendar </p>\n\n            </ion-slide>\n\n            <ion-slide class="dateSlide">\n\n              <p class="date"> 21th January 2018</p>\n\n              <p class="link"> Check Calendar </p>\n\n            </ion-slide>\n\n          </ion-slides>\n\n        </ion-item>\n\n        <button ion-button color="cta" class="floatingButton" mode="ios" full (click)="answer(0,\'date\')">Next</button>\n\n    </ion-slide>\n\n\n\n    <ion-slide>\n\n      <p class="question">Add a little message to your application for Maja</p>\n\n      <ion-card class="answer">\n\n       <ion-textarea  \n\n        placeholder="Hi Maya looking forward to meet you..."\n\n       >  \n\n       </ion-textarea>\n\n      </ion-card>\n\n       <button ion-button color="cta" class="floatingButton" mode="ios" full (click)="submitApplication($event)">Send</button>\n\n    </ion-slide>\n\n\n\n    <ion-slide>\n\n    <p class="question"> It\'s Done!</p>\n\n    <p>We sent your application to Maya and will notify you as soon as we have news!</p>\n\n    </ion-slide>\n\n\n\n\n\n  </ion-slides>\n\n</ion-content>\n\n\n\n'/*ion-inline-end:"C:\Users\Daniel Burgmann\wg\src\pages\application\application.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
     ], ApplicationPage);
