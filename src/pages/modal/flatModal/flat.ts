@@ -43,7 +43,7 @@ export class FlatModal {
       zoom: 15,
       disableDefaultUI: true,
       draggable: false,
-      zoomControl: true
+      zoomControl: false
     });
 
     //create marker

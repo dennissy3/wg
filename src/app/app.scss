@@ -23,8 +23,8 @@ ion-card {
   border-radius: 10% !important;
 }
 
-.gradient {
-  background: rgba(255, 109, 86, 1);
+button.gradient {
+  background: rgba(255, 109, 86, 1) !important;
   background: -moz-linear-gradient(left, rgba(255, 109, 86, 1) 0%, rgba(255, 82, 117, 1) 100%);
   background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255, 109, 86, 1)), color-stop(100%, rgba(255, 82, 117, 1)));
   background: -webkit-linear-gradient(left, rgba(255, 109, 86, 1) 0%, rgba(255, 82, 117, 1) 100%);

@@ -25686,8 +25686,8 @@ ion-card {
   border-radius: 10% !important;
 }
 
-.gradient {
-  background: #ff6d56;
+button.gradient {
+  background: #ff6d56 !important;
   background: -webkit-gradient(left top, right top, color-stop(0%, #ff6d56), color-stop(100%, #ff5275));
   background: -webkit-gradient(linear, left top, right top, from(#ff6d56), to(#ff5275));
   background: linear-gradient(to right, #ff6d56 0%, #ff5275 100%);
@@ -25824,7 +25824,7 @@ page-application .floatingButton {
 }
 
 page-flat .header-img {
-  height: 50vh;
+  height: 30vh;
   width: 100vw;
   background-position: center;
   background-size: cover;
@@ -25842,6 +25842,7 @@ page-flat #map2 {
   background-color: transparent !important;
   border-radius: 10%;
   margin: 10px auto;
+  padding: 0 0 30px 0;
 }
 
 page-home .flat-slider {
@@ -25882,12 +25883,11 @@ page-home .bottom-arrow {
 }
 
 page-home .message-slider {
-  height: 40vh !important;
+  height: 30vh !important;
 }
 
 page-home .message-slider ion-slide {
-  height: 40vh !important;
-  margin-top: 30px !important;
+  height: 30vh !important;
 }
 
 page-home .message-slider ion-slide ion-card {
@@ -25897,7 +25897,7 @@ page-home .message-slider ion-slide ion-card {
 }
 
 page-home .wg-ad {
-  height: 14vh;
+  height: 18vh;
   background-image: url("../../assets/1.jpg");
   background-position: center;
   background-size: cover;
@@ -26015,88 +26015,6 @@ page-flat .flat-slider ion-slide ion-card {
 page-flat .flat {
   border-radius: 10%;
   margin-top: 2.5%;
-}
-
-page-flat .floatingButton {
-  z-index: 1;
-  position: fixed;
-  bottom: 20px;
-  margin: 5px;
-}
-
-page-flat #map {
-  width: calc(100% - 20px);
-  height: 40%;
-  background-color: transparent !important;
-  border-radius: 10%;
-  margin: 10px auto;
-}
-
-page-home .flat-slider {
-  height: 100vh;
-}
-
-page-home ion-card {
-  border-radius: 3% !important;
-}
-
-page-home .top {
-  -webkit-box-align: start;
-  -webkit-align-items: flex-start;
-  -ms-flex-align: start;
-  align-items: flex-start;
-}
-
-page-home .name {
-  text-align: left;
-}
-
-page-home .bottom-arrow {
-  position: absolute;
-  bottom: 2%;
-  display: block;
-  margin: 0 auto;
-  width: 100%;
-}
-
-page-home .message-slider {
-  height: 100px;
-}
-
-page-home .message-slider ion-slide {
-  height: 100px !important;
-  width: auto !important;
-}
-
-page-home .message-slider ion-slide ion-card {
-  height: 30vw;
-  width: 30vw;
-  border-radius: 10% !important;
-}
-
-page-home .fit-circle::before {
-  content: "";
-  border: 2.5px solid red;
-  width: 8px;
-  height: 8px;
-  border-radius: 100%;
-  display: inline-block;
-  margin: 5px 5px 0 0;
-  font-size: 16px;
-}
-
-page-home .wg-ad {
-  height: 30vh;
-  background-image: url("../../assets/1.jpg");
-  background-position: center;
-  background-size: cover;
-}
-
-page-home .wg-ad .card-title {
-  top: 75%;
-}
-
-page-home .message {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -26106,23 +26024,29 @@ page-home .message {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
-page-home .age span {
-  height: 50px !important;
+page-flat .cta {
+  position: fixed !important;
+  bottom: 0;
+  width: 100%;
+  border-radius: 0%;
 }
 
-page-home #age {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-page-home .occupation {
-  position: absolute;
-  bottom: 5%;
-  left: 5%;
-  color: #b1b1b1;
-  font-size: 12px;
+page-flat #map {
+  width: calc(100% - 24px);
+  height: 30%;
+  background-color: transparent !important;
+  border-radius: 10%;
+  margin: 10px auto 30px auto;
 }
 
 page-questionnaire .answer {
