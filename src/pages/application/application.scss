@@ -1,0 +1,33 @@
+page-application {
+  .answer {
+    height: 25vh;
+  }
+
+  .question {
+    position: absolute;
+    top: 5%;
+    padding: 10px;
+  }
+
+
+  .dateSlide{
+  	padding: 30px;
+  	display:block;
+  	text-align:center;
+  	margin: 0 auto;
+  }	
+
+  .date{
+  	font-size: 24pt;
+  }
+
+  .link{
+  	margin-bottom: 10px;
+  }
+  .floatingButton{
+    z-index:1;
+    position: fixed;
+    bottom:20px;
+    margin: 5px;
+  }
+}
