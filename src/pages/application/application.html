@@ -1,0 +1,47 @@
+<!--<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>-->
+
+<ion-content>
+  <ion-slides pager>
+
+    <ion-slide>
+        <p class="question">When do you want to meet your potential new roommates?</p>
+        <ion-item>
+          <ion-slides pager class="dateSlider">
+            <ion-slide class="dateSlide">
+              <p class="date"> 18th January 2018</p>
+              <p class="link"> Check Calendar </p>
+            </ion-slide>
+            <ion-slide class="dateSlide">
+              <p class="date"> 20th January 2018</p>
+              <p class="link"> Check Calendar </p>
+            </ion-slide>
+            <ion-slide class="dateSlide">
+              <p class="date"> 21th January 2018</p>
+              <p class="link"> Check Calendar </p>
+            </ion-slide>
+          </ion-slides>
+        </ion-item>
+        <button ion-button color="cta" class="floatingButton" mode="ios" full (click)="answer(0,'date')">Next</button>
+    </ion-slide>
+
+    <ion-slide>
+      <p class="question">Add a little message to your application for Maja</p>
+      <ion-card class="answer">
+       <ion-textarea  
+        placeholder="Hi Maya looking forward to meet you..."
+       >  
+       </ion-textarea>
+      </ion-card>
+       <button ion-button color="cta" class="floatingButton" mode="ios" full (click)="move($event)">Send</button>
+    </ion-slide>
+
+
+  </ion-slides>
+</ion-content>
+

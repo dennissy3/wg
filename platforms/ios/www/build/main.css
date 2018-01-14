@@ -25690,6 +25690,13 @@ ion-card {
   font-weight: bold;
 }
 
+.subtitle {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  margin: 20px 0 10px 10px;
+}
+
 .card-background-page ion-card {
   position: relative;
   text-align: center;
@@ -25771,8 +25778,9 @@ page-home .message-slider ion-slide {
 }
 
 page-home .message-slider ion-slide ion-card {
-  height: 25vw;
-  width: 25vw;
+  height: 30vw;
+  width: 30vw;
+  border-radius: 10% !important;
 }
 
 page-home .fit-circle::before {
@@ -25784,6 +25792,46 @@ page-home .fit-circle::before {
   display: inline-block;
   margin: 5px 5px 0 0;
   font-size: 16px;
+}
+
+page-home .wg-ad {
+  height: 30vh;
+  background-image: url("../../assets/1.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+page-home .wg-ad .card-title {
+  top: 75%;
+}
+
+page-home .message {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+page-home .age span {
+  height: 50px !important;
+}
+
+page-home #age {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+page-home .occupation {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  color: #b1b1b1;
+  font-size: 12px;
 }
 
 page-flat .title {
@@ -25839,9 +25887,11 @@ page-flat .flat-slider ion-slide, page-flat .flat-slider ion-slide ion-card {
 }
 
 page-flat #map {
-  width: 100%;
+  width: calc(100% - 20px);
   height: 40%;
   background-color: transparent !important;
+  border-radius: 10%;
+  margin: 10px auto;
 }
 
 page-flat .flat {

@@ -4,6 +4,7 @@ import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
 import {ModalController} from "ionic-angular/index";
 import {ViewController} from "ionic-angular/index";
+import {ApplicationPage} from '../../application/application'
 
 declare var google;
 
@@ -48,5 +49,9 @@ export class FlatModal {
   dismiss(event) {
     console.log(event)
     this.viewCtrl.dismiss();
+  }
+
+  presentApplication(event){
+    this.navCtrl.push(ApplicationPage)
   }
 }
