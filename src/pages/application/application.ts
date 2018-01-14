@@ -32,6 +32,10 @@ export class ApplicationPage {
 
   submitApplication(applicationData){
     //todo: send data to server
+    this.slides.slideNext(500)
+  }
 
+  returnToDash(){
+    this.navCtrl.setRoot(HomePage)
   }
 }
