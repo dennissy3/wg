@@ -1,11 +1,44 @@
 webpackJsonp([0],{
 
-/***/ 100:
+/***/ 110:
+/***/ (function(module, exports) {
+
+function webpackEmptyAsyncContext(req) {
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncatched exception popping up in devtools
+	return Promise.resolve().then(function() {
+		throw new Error("Cannot find module '" + req + "'.");
+	});
+}
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = 110;
+
+/***/ }),
+
+/***/ 151:
+/***/ (function(module, exports) {
+
+function webpackEmptyAsyncContext(req) {
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncatched exception popping up in devtools
+	return Promise.resolve().then(function() {
+		throw new Error("Cannot find module '" + req + "'.");
+	});
+}
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = 151;
+
+/***/ }),
+
+/***/ 195:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FlatModal; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return KeysPipe; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular_index__ = __webpack_require__(10);
@@ -26,14 +59,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var FlatModal = (function () {
     function FlatModal(navCtrl, viewCtrl, params) {
         this.navCtrl = navCtrl;
         this.viewCtrl = viewCtrl;
+        this.params = params;
         this.markers = [];
-        var flat = params.get('data');
-        console.log(JSON.stringify(flat));
+        this.flat = params.get('data');
+        this.imgs = this.flat.imgs;
+        console.log(this.flat);
     }
     FlatModal.prototype.presentApplication = function (event) {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__application_application__["a" /* ApplicationPage */]);
@@ -63,77 +97,23 @@ var FlatModal = (function () {
         console.log(event);
         this.viewCtrl.dismiss();
     };
+    FlatModal.prototype.hack = function (val) {
+        return Array.from(val);
+    };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Slides */]),
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Slides */])
     ], FlatModal.prototype, "slides", void 0);
     FlatModal = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-flat',template:/*ion-inline-start:"/Development/wg/blank/src/pages/modal/flatModal/flat.html"*/'<ion-header swipeAll (swipedown)="dismiss($event)">\n  <ion-navbar>\n    <ion-buttons start>\n      <button ion-button icon-only (click)="dismiss()">\n        <ion-icon name="arrow-back"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="flat card-background-page">\n  <p class="title">Neuköllnies</p>\n\n  <div class="flatmates">\n    <div class="flatmate">\n      <div class="head" id="maja"></div>\n      <p>Maja</p>\n    </div>\n    <div class="flatmate">\n      <div class="head" id="karlo"></div>\n      <p>Karlo</p>\n    </div>\n  </div>\n\n  {{flat}}\n  <ion-slides class="flat-slider" slidesPerView="1.5" *ngFor="let f of flat">\n    <ion-slide *ngFor="let i of f.imgs | keys">\n      <ion-card style="background-image: url(\'../../../assets/{{i}}.jpg\');">\n      </ion-card>\n    </ion-slide>\n  </ion-slides>\n\n  <div id="map"></div>\n  <button ion-button color="cta" class="floatingButton" mode="ios" full (click)="presentApplication($event)">Apply</button>\n\n</ion-content>\n'/*ion-inline-end:"/Development/wg/blank/src/pages/modal/flatModal/flat.html"*/
+            selector: 'page-flat',template:/*ion-inline-start:"/Development/wg/blank/src/pages/modal/flatModal/flat.html"*/'<ion-header swipeAll (swipedown)="dismiss($event)">\n  <ion-navbar>\n    <ion-buttons start>\n      <button ion-button icon-only (click)="dismiss()">\n        <ion-icon name="arrow-back"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="flat card-background-page">\n  <p class="title">Neuköllnies</p>\n\n  <div class="flatmates">\n    <div class="flatmate">\n      <div class="head" id="maja"></div>\n      <p>Maja</p>\n    </div>\n    <div class="flatmate">\n      <div class="head" id="karlo"></div>\n      <p>Karlo</p>\n    </div>\n  </div>\n\n  <ion-slides class="flat-slider" slidesPerView="1.5">\n    {{f}}\n    <ion-slide *ngFor="let i of imgs">\n      <ion-card [style.backgroundImage]="\'url(../../../assets/\' + i + \'.jpg)\'">\n      </ion-card>\n    </ion-slide>\n  </ion-slides>\n\n  <div id="map"></div>\n  <button ion-button color="cta" class="floatingButton" mode="ios" full (click)="presentApplication($event)">Apply</button>\n\n</ion-content>\n'/*ion-inline-end:"/Development/wg/blank/src/pages/modal/flatModal/flat.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular_index__["i" /* ViewController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular_index__["f" /* NavParams */]])
     ], FlatModal);
     return FlatModal;
 }());
 
-var KeysPipe = (function () {
-    function KeysPipe() {
-    }
-    KeysPipe.prototype.transform = function (value, args) {
-        // check if "routes" exists
-        if (value) {
-            // create instance vars to store keys and final output
-            var keyArr = Object.keys(value), dataArr_1 = [];
-            // loop through the object,
-            // pushing values to the return array
-            keyArr.forEach(function (key) {
-                dataArr_1.push(value[key]);
-            });
-            // return the resulting array
-            return dataArr_1;
-        }
-    };
-    KeysPipe = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["S" /* Pipe */])({ name: 'keys', pure: false })
-    ], KeysPipe);
-    return KeysPipe;
-}());
-
 //# sourceMappingURL=flat.js.map
-
-/***/ }),
-
-/***/ 111:
-/***/ (function(module, exports) {
-
-function webpackEmptyAsyncContext(req) {
-	// Here Promise.resolve().then() is used instead of new Promise() to prevent
-	// uncatched exception popping up in devtools
-	return Promise.resolve().then(function() {
-		throw new Error("Cannot find module '" + req + "'.");
-	});
-}
-webpackEmptyAsyncContext.keys = function() { return []; };
-webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
-module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 111;
-
-/***/ }),
-
-/***/ 152:
-/***/ (function(module, exports) {
-
-function webpackEmptyAsyncContext(req) {
-	// Here Promise.resolve().then() is used instead of new Promise() to prevent
-	// uncatched exception popping up in devtools
-	return Promise.resolve().then(function() {
-		throw new Error("Cannot find module '" + req + "'.");
-	});
-}
-webpackEmptyAsyncContext.keys = function() { return []; };
-webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
-module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 152;
 
 /***/ }),
 
@@ -385,11 +365,11 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(192);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(191);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(194);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(274);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_modal_flatModal_flat__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_modal_flatModal_flat__ = __webpack_require__(195);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_start_start__ = __webpack_require__(275);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_questionnaire_questionnaire__ = __webpack_require__(198);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_application_application__ = __webpack_require__(196);
@@ -401,7 +381,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
 
 
 
@@ -427,7 +406,6 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_8__pages_start_start__["a" /* StartPage */],
                 __WEBPACK_IMPORTED_MODULE_9__pages_questionnaire_questionnaire__["a" /* QuestionnairePage */],
                 __WEBPACK_IMPORTED_MODULE_12__pages_modal_peopleModal_people__["a" /* PeopleModal */],
-                __WEBPACK_IMPORTED_MODULE_7__pages_modal_flatModal_flat__["b" /* KeysPipe */],
                 __WEBPACK_IMPORTED_MODULE_10__pages_application_application__["a" /* ApplicationPage */]
             ],
             imports: [
@@ -450,7 +428,6 @@ var AppModule = (function () {
             providers: [
                 __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
-                __WEBPACK_IMPORTED_MODULE_7__pages_modal_flatModal_flat__["b" /* KeysPipe */],
                 { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] }
             ]
         })
@@ -469,8 +446,8 @@ var AppModule = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(192);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(191);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(50);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -556,7 +533,7 @@ var StartPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular_index__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modal_flatModal_flat__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modal_flatModal_flat__ = __webpack_require__(195);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modal_peopleModal_people__ = __webpack_require__(197);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;

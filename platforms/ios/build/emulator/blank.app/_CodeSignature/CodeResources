@@ -98,7 +98,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		WYRumx6EgQ1/lgdgs4dyrAdc69E=
+		3L1Xfq/UMkHEwcFTUGIv1S8vp2U=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
@@ -182,7 +182,7 @@
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		MB5h4VjKE1kjvrkuR84Podmr5kw=
+		gxn+npujIOUh2558ttXB7XfLH2o=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -328,6 +328,22 @@
 		<data>
 		ovqkbjDQiKCNb1LyZKEA0azifIw=
 		</data>
+		<key>www/build/main.css</key>
+		<data>
+		MaszqCDyNueXuAwxlI1i8mhLX5k=
+		</data>
+		<key>www/build/main.css.map</key>
+		<data>
+		K+iMpCQsduglOsYkdIUQZQMtaDM=
+		</data>
+		<key>www/build/main.js</key>
+		<data>
+		Ww5sPHu3jkREQiclssb9+4Ws79U=
+		</data>
+		<key>www/build/main.js.map</key>
+		<data>
+		FZ0/2HhYK9zOyKbKZV3stEQZP9I=
+		</data>
 		<key>www/build/polyfills.js</key>
 		<data>
 		frjd4thoRuKW3YPSB1d4JHxvPb4=
@@ -335,6 +351,14 @@
 		<key>www/build/sw-toolbox.js</key>
 		<data>
 		T1qyFAGAzjWMGMIjeesugfjtGAw=
+		</data>
+		<key>www/build/vendor.js</key>
+		<data>
+		TLr5cSBKrC/WfHkVyDjdunDtV88=
+		</data>
+		<key>www/build/vendor.js.map</key>
+		<data>
+		8+rWHh5w1l5sQk6s/5oVpjis34c=
 		</data>
 		<key>www/cordova-js-src/exec.js</key>
 		<data>
@@ -362,7 +386,7 @@
 		</data>
 		<key>www/index.html</key>
 		<data>
-		950K5V2lQiFn1Dj80GZTMSBKjYI=
+		Gnkj05leUKEXbi28Gidz/nFwJtI=
 		</data>
 		<key>www/manifest.json</key>
 		<data>
@@ -652,11 +676,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			WYRumx6EgQ1/lgdgs4dyrAdc69E=
+			3L1Xfq/UMkHEwcFTUGIv1S8vp2U=
 			</data>
 			<key>hash2</key>
 			<data>
-			agjA83xlAfr16gx1fANkIDQx1JVvh2Gz6JTYE937P40=
+			oZcwrK8lyVJxrzduyGz4++RLkzRnboNrc7Oub4B13HA=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
@@ -872,11 +896,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			MB5h4VjKE1kjvrkuR84Podmr5kw=
+			gxn+npujIOUh2558ttXB7XfLH2o=
 			</data>
 			<key>hash2</key>
 			<data>
-			1CMHE1FiBR7bp9PW2pDvUOeFLT8QCMhWaVY6Wy+rfSE=
+			kngbuPmUrAsQsG7CI2YmbiuIlp9QP2V0UgeDVeW5SUc=
 			</data>
 		</dict>
 		<key>config.xml</key>
@@ -1264,6 +1288,50 @@
 			/+Ptd/Dg9kCHm+2lHAtWzoGaMshlaADabXKIDGJk5a4=
 			</data>
 		</dict>
+		<key>www/build/main.css</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			MaszqCDyNueXuAwxlI1i8mhLX5k=
+			</data>
+			<key>hash2</key>
+			<data>
+			9h7F/HUS7RO74elLzBGbMu1Zt4FsLteVHHF00KRqUuw=
+			</data>
+		</dict>
+		<key>www/build/main.css.map</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			K+iMpCQsduglOsYkdIUQZQMtaDM=
+			</data>
+			<key>hash2</key>
+			<data>
+			dCNOmK/nSY+12vHzasLXiswzlGT5UHA7jAGYkvmCuQs=
+			</data>
+		</dict>
+		<key>www/build/main.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Ww5sPHu3jkREQiclssb9+4Ws79U=
+			</data>
+			<key>hash2</key>
+			<data>
+			0LyNfb+NmvPGB+xWqnxpPaL/l1Gg0NAv8qWex59hAmM=
+			</data>
+		</dict>
+		<key>www/build/main.js.map</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			FZ0/2HhYK9zOyKbKZV3stEQZP9I=
+			</data>
+			<key>hash2</key>
+			<data>
+			y2/xUSdORAFIXW5Tr7Cj91IyIm3a5JWp0tiq+biok8E=
+			</data>
+		</dict>
 		<key>www/build/polyfills.js</key>
 		<dict>
 			<key>hash</key>
@@ -1284,6 +1352,28 @@
 			<key>hash2</key>
 			<data>
 			hg19xBqGOjskPM73S8+yRFnwodqcHrx8sQJ1vWGZgt4=
+			</data>
+		</dict>
+		<key>www/build/vendor.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			TLr5cSBKrC/WfHkVyDjdunDtV88=
+			</data>
+			<key>hash2</key>
+			<data>
+			3hSB7GgFwLWpN6OvGjfNWKhdgl0+iOBdSUoNTls/O+Q=
+			</data>
+		</dict>
+		<key>www/build/vendor.js.map</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			8+rWHh5w1l5sQk6s/5oVpjis34c=
+			</data>
+			<key>hash2</key>
+			<data>
+			AVNScyFVRPZQNg2n/VcwAOoyMRk2M/0TueK6qr+8qpU=
 			</data>
 		</dict>
 		<key>www/cordova-js-src/exec.js</key>
@@ -1356,11 +1446,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			950K5V2lQiFn1Dj80GZTMSBKjYI=
+			Gnkj05leUKEXbi28Gidz/nFwJtI=
 			</data>
 			<key>hash2</key>
 			<data>
-			JFWoEiIXU0G3bb4WQt1rsZQFoM3cuL7cEs+ON2O76LI=
+			KS+IDvxhoH6BnMR5yoxE+GVDcEF3J6z6iHraFQ95WUk=
 			</data>
 		</dict>
 		<key>www/manifest.json</key>
