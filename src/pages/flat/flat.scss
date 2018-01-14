@@ -1,9 +1,5 @@
 page-flat {
 
-  ion-content {
-    border-radius: 10px 10px 0 0 !important;
-  }
-
   .header-img {
     height: 50vh;
     width: 100vw;
@@ -19,7 +15,7 @@ page-flat {
   }
 
   #map2 {
-    height: 30%;
+    height: 20vh;
     background-color: rgba(0,0,0,0) !important;
     border-radius:10%;
     margin: 10px auto;
