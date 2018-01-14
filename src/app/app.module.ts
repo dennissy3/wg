@@ -11,6 +11,7 @@ import {StartPage} from "../pages/start/start";
 import {QuestionnairePage} from "../pages/questionnaire/questionnaire";
 import {IonicSwipeAllModule} from "ionic-swipe-all/dist/index";
 import {PeopleModal} from "../pages/modal/peopleModal/people";
+import {KeysPipe} from "../pages/modal/flatModal/flat";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {PeopleModal} from "../pages/modal/peopleModal/people";
     FlatModal,
     StartPage,
     QuestionnairePage,
-    PeopleModal
+    PeopleModal,
+    KeysPipe
   ],
   imports: [
     BrowserModule,
@@ -38,6 +40,7 @@ import {PeopleModal} from "../pages/modal/peopleModal/people";
   providers: [
     StatusBar,
     SplashScreen,
+    KeysPipe,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

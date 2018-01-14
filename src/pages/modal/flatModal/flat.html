@@ -23,8 +23,8 @@
   </div>
 
   {{flat}}
-  <ion-slides class="flat-slider" slidesPerView="1.5">
-    <ion-slide *ngFor="let i of f.imgs">
+  <ion-slides class="flat-slider" slidesPerView="1.5" *ngFor="let f of flat">
+    <ion-slide *ngFor="let i of f.imgs | keys">
       <ion-card style="background-image: url('../../../assets/{{i}}.jpg');">
       </ion-card>
     </ion-slide>
