@@ -1,18 +1,79 @@
-<!--<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>-->
+<ion-content class="card-background-page" no-bounce>
+  <ion-slides direction="vertical" initialSlide="1">
+    <ion-slide class="top">
+      <p class="name title">Hey Karlo</p>
+      <ion-card *ngIf="!adOnline">
+        <ion-list>
+          <ion-item>
+            <button ion-button clear>Add your fantastic room</button>
+          </ion-item>
+          <ion-item>
+            Test
+          </ion-item>
+          <ion-item>
+            Buzz
+          </ion-item>
+        </ion-list>
+      </ion-card>
 
-<ion-content>
-  <ion-slides>
-    <ion-slide>
-      <img src="assets/1.jpg">
+      <ion-card class="wg-ad">
+        <div class="card-title">"Neuköllnies"</div>
+      </ion-card>
+
+      <p class="subtitle">Messages</p>
+      <ion-slides slidesPerView="3" class="message-slider">
+        <ion-slide (click)="presentPeopleModal()">
+          <ion-card class="message">
+            <div class="fit-circle">David</div>
+            <span class="age">
+              <span id="age">25</span>
+              <span>years<br>old</span>
+            </span>
+            <span class="occupation">Architect</span>
+          </ion-card>
+        </ion-slide>
+        <ion-slide>
+          <ion-card>
+            <div class="fit-circle">Kina</div>
+          </ion-card>
+        </ion-slide>
+        <ion-slide>
+          <ion-card>
+            <div class="fit-circle">Kina</div>
+          </ion-card>
+        </ion-slide>
+        <ion-slide>
+          <ion-card>
+            <div class="fit-circle">Kina</div>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+
+
+      <p class="title bottom-arrow" (click)="move(1)"><ion-icon name="arrow-up"></ion-icon></p>
     </ion-slide>
-    <ion-slide>
 
+    <ion-slide>
+      <ion-slides swipeAll (swipedown)="swipe($event)" (swipeup)="presentFlatModal()" class="flat-slider">
+        <ion-slide>
+          <p class="title" (click)="move(0)"><ion-icon name="arrow-down"></ion-icon></p>
+          <ion-card (click)="presentFlatModal()">
+            <img src="assets/1.jpg"/>
+            <div class="card-title">Prenzlauer Berg</div>
+            <div class="card-subtitle">with Maja and Karlo</div>
+          </ion-card>
+        </ion-slide>
+
+        <ion-slide>
+          <p class="title"><ion-icon name="arrow-down"></ion-icon></p>
+          <ion-card (click)="presentFlatModal()">
+            <img src="assets/1.jpg"/>
+            <div class="card-title">Prenzlauer Berg</div>
+            <div class="card-subtitle">mit Maja und Karlo</div>
+          </ion-card>
+        </ion-slide>
+
+      </ion-slides>
     </ion-slide>
   </ion-slides>
 </ion-content>

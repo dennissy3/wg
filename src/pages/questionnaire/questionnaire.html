@@ -1,0 +1,52 @@
+<!--<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>-->
+
+<ion-content>
+  <ion-slides pager>
+
+    <ion-slide *ngFor="let q of metaQuestions">
+      <p class="question">{{q.question}}</p>
+      <ion-item>
+        <ion-input type={{q.answerType}} placeholder={{q.answerLabels[0]}}></ion-input>
+        <button clear item-right (click)="move(0, 'Klosterstraße 62')"><ion-icon name="arrow-forward"></ion-icon></button>
+      </ion-item>
+    </ion-slide>
+
+
+
+    <ion-slide>
+        <p class="question">What is your gender?</p>
+        <ion-card class="answer" (click)="answer(0,0)">
+          <ion-card-content>
+            I am female
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card class="answer">
+          <ion-card-content>
+            I am female
+          </ion-card-content>
+        </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+      <p class="question">What is your name?</p>
+      <ion-card class="answer" (click)="answer(5,0)">
+        <ion-card-content>
+          David
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card class="answer">
+        <ion-card-content>
+          Karlo
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

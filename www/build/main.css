@@ -25677,3 +25677,246 @@ ion-navbar.toolbar {
   min-height: calc(46px + constant(safe-area-inset-bottom));
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
+
+ion-card {
+  border-radius: 10% !important;
+}
+
+.title {
+  font-size: 24px;
+  height: 5vh;
+  margin: 0;
+  margin: 20px 0 10px 10px;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  margin: 20px 0 10px 10px;
+}
+
+.card-background-page ion-card {
+  position: relative;
+  text-align: center;
+}
+
+.card-background-page .card-title {
+  position: absolute;
+  top: 85%;
+  font-size: 2.0em;
+  width: 100%;
+  font-weight: bold;
+  color: #fff;
+}
+
+.card-background-page .card-subtitle {
+  font-size: 1.0em;
+  position: absolute;
+  top: 93%;
+  width: 100%;
+  color: #fff;
+}
+
+.card-background-page .card-subtitle, .card-background-page .card-title {
+  text-shadow: 4px 2px 15px #7d7d7d;
+}
+
+.card-background-page .modal-wrapper {
+  position: absolute;
+  overflow: hidden;
+  max-width: 280px;
+  border-radius: 2px;
+  width: 80vw;
+  height: 50vh;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border: 0;
+  -webkit-box-shadow: 0 16px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 16px 20px rgba(0, 0, 0, 0.4);
+  background-color: #fafafa;
+}
+
+page-home .flat-slider {
+  height: 100vh;
+}
+
+page-home ion-card {
+  border-radius: 3% !important;
+}
+
+page-home .top {
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+page-home .name {
+  text-align: left;
+}
+
+page-home .bottom-arrow {
+  position: absolute;
+  bottom: 2%;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+
+page-home .message-slider {
+  height: 100px;
+}
+
+page-home .message-slider ion-slide {
+  height: 100px !important;
+  width: auto !important;
+}
+
+page-home .message-slider ion-slide ion-card {
+  height: 30vw;
+  width: 30vw;
+  border-radius: 10% !important;
+}
+
+page-home .fit-circle::before {
+  content: "";
+  border: 2.5px solid red;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  display: inline-block;
+  margin: 5px 5px 0 0;
+  font-size: 16px;
+}
+
+page-home .wg-ad {
+  height: 30vh;
+  background-image: url("../../assets/1.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+page-home .wg-ad .card-title {
+  top: 75%;
+}
+
+page-home .message {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+page-home .age span {
+  height: 50px !important;
+}
+
+page-home #age {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+page-home .occupation {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  color: #b1b1b1;
+  font-size: 12px;
+}
+
+page-flat .title {
+  font-size: 24px;
+  display: block;
+  width: 100%;
+  height: 5vh;
+  margin: 0;
+  padding: 0;
+}
+
+page-flat .slider {
+  height: 90vh;
+}
+
+page-flat .name {
+  border-bottom: 2px solid #000;
+}
+
+page-flat .flatmate {
+  display: inline-block;
+  text-align: center;
+}
+
+page-flat .head {
+  display: inline-block;
+  border-radius: 100%;
+  width: 18vw;
+  height: 18vw;
+  background-size: cover;
+  background-position: center;
+}
+
+page-flat .flatmate p {
+  padding: 0;
+  margin: 0;
+}
+
+page-flat #maja {
+  background-image: url("../../../assets/maja.jpg");
+}
+
+page-flat #karlo {
+  background-image: url("../../../assets/karlo.jpg");
+}
+
+page-flat .flat-slider {
+  height: 50vh;
+}
+
+page-flat .flat-slider ion-slide, page-flat .flat-slider ion-slide ion-card {
+  border-radius: 3% !important;
+}
+
+page-flat #map {
+  width: calc(100% - 20px);
+  height: 40%;
+  background-color: transparent !important;
+  border-radius: 10%;
+  margin: 10px auto;
+}
+
+page-flat .flat {
+  border-radius: 10%;
+  margin-top: 2.5%;
+}
+
+page-questionnaire .answer {
+  height: 25vh;
+}
+
+page-questionnaire .question {
+  position: absolute;
+  top: 5%;
+}
+
+page-start .title {
+  font-size: 48px;
+  text-align: center;
+}
+
+page-start .continue-info {
+  position: absolute;
+  bottom: 5%;
+  display: block;
+  text-align: center;
+  width: 100%;
+}

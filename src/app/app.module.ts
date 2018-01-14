@@ -6,20 +6,34 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import {FlatModal} from "../pages/modal/flatModal/flat";
+import {StartPage} from "../pages/start/start";
+import {QuestionnairePage} from "../pages/questionnaire/questionnaire";
+import {IonicSwipeAllModule} from "ionic-swipe-all/dist/index";
+import {PeopleModal} from "../pages/modal/peopleModal/people";
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    FlatModal,
+    StartPage,
+    QuestionnairePage,
+    PeopleModal
   ],
   imports: [
     BrowserModule,
+    IonicSwipeAllModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    FlatModal,
+    StartPage,
+    QuestionnairePage,
+    PeopleModal
   ],
   providers: [
     StatusBar,

@@ -1,0 +1,42 @@
+<ion-header swipeAll (swipedown)="dismiss($event)">
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="dismiss()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="flat card-background-page">
+  <p class="title">Neuköllnies</p>
+
+  <div class="flatmates">
+    <div class="flatmate">
+      <div class="head" id="maja"></div>
+      <p>Maja</p>
+    </div>
+    <div class="flatmate">
+      <div class="head" id="karlo"></div>
+      <p>Karlo</p>
+    </div>
+  </div>
+
+  <ion-slides class="flat-slider" slidesPerView="1.5">
+    <ion-slide>
+      <ion-card style="background-image: url('../../../assets/1.jpg'); height: 60vh; background-size: cover">
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card style="background-image: url('../../../assets/2.jpg'); height: 60vh; background-size: cover">
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card style="background-image: url('../../../assets/3.jpg'); height: 60vh; background-size: cover">
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+
+  <div id="map"></div>
+
+</ion-content>

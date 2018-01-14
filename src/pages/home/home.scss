@@ -1,3 +1,85 @@
 page-home {
 
+  .flat-slider {
+    height: 100vh;
+  }
+
+  ion-card {
+    border-radius: 3% !important;
+  }
+
+  .top {
+    align-items: flex-start;
+  }
+
+  .name {
+    text-align: left;
+  }
+
+  .bottom-arrow {
+    position: absolute;
+    bottom: 2%;
+    display: block;
+    margin: 0 auto;
+    width: 100%
+  }
+
+  .message-slider {
+    height: 100px;
+  }
+
+  .message-slider ion-slide {
+    height: 100px !important;
+    width: auto !important;
+  }
+
+  .message-slider ion-slide ion-card {
+    height: 30vw;
+    width: 30vw;
+    border-radius:10% !important;
+  }
+
+  .fit-circle::before {
+    content: "";
+    border: 2.5px solid red;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    display: inline-block;
+    margin: 5px 5px 0 0;
+    font-size: 16px;
+  }
+
+  .wg-ad {
+    height: 30vh;
+    background-image: url('../../assets/1.jpg');
+    background-position: center;
+    background-size:cover;
+
+    .card-title {
+      top: 75%;
+    }
+  }
+
+  .message {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .age span {
+    height: 50px !important;
+  }
+
+  #age {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .occupation {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    color: #b1b1b1;
+    font-size: 12px;
+  }
 }
