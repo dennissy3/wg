@@ -86,8 +86,8 @@ export class HomePage {
     }
   }
 
-  openEditFlat() {
-    this.navCtrl.push(FlatPage, {flat: f})
+  openEditFlat(f) {
+    this.navCtrl.push(FlatPage)
   }
 
 
