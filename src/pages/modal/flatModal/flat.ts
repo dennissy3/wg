@@ -6,6 +6,7 @@ import { Slides } from 'ionic-angular';
 import {ModalController} from "ionic-angular/index";
 import {ViewController} from "ionic-angular/index";
 import {NavParams} from "ionic-angular/index";
+import {ApplicationPage} from '../../application/application'
 
 declare var google;
 
@@ -53,8 +54,6 @@ export class FlatModal {
     console.log(event)
     this.viewCtrl.dismiss();
   }
-
-
 }
 
 @Pipe({ name: 'keys',  pure: false })
@@ -74,5 +73,9 @@ export class KeysPipe implements PipeTransform {
       // return the resulting array
       return dataArr;
     }
+=======
+  presentApplication(event){
+    this.navCtrl.push(ApplicationPage)
+>>>>>>> a3a61f95d692cedc77cfc04b81a74cc1c1a44842
   }
 }

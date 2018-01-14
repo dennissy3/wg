@@ -65,4 +65,11 @@ page-flat {
     border-radius: 10%;
     margin-top: 2.5%
   }
+
+  .floatingButton{
+    z-index:1;
+    position: fixed;
+    bottom:20px;
+    margin: 5px;
+  }
 }

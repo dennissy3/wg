@@ -6,6 +6,8 @@ import {ModalController} from "ionic-angular/index";
 import {FlatModal} from "../modal/flatModal/flat";
 import {PeopleModal} from "../modal/peopleModal/people";
 
+import {ApplicationPage} from '../application/application'
+
 
 @Component({
   selector: 'page-home',

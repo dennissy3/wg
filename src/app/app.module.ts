@@ -9,9 +9,12 @@ import { HomePage } from '../pages/home/home';
 import {FlatModal} from "../pages/modal/flatModal/flat";
 import {StartPage} from "../pages/start/start";
 import {QuestionnairePage} from "../pages/questionnaire/questionnaire";
+import {ApplicationPage} from "../pages/application/application";
 import {IonicSwipeAllModule} from "ionic-swipe-all/dist/index";
 import {PeopleModal} from "../pages/modal/peopleModal/people";
 import {KeysPipe} from "../pages/modal/flatModal/flat";
+
+
 
 @NgModule({
   declarations: [
@@ -21,7 +24,11 @@ import {KeysPipe} from "../pages/modal/flatModal/flat";
     StartPage,
     QuestionnairePage,
     PeopleModal,
+<<<<<<< HEAD
     KeysPipe
+=======
+    ApplicationPage
+>>>>>>> a3a61f95d692cedc77cfc04b81a74cc1c1a44842
   ],
   imports: [
     BrowserModule,
@@ -35,7 +42,8 @@ import {KeysPipe} from "../pages/modal/flatModal/flat";
     FlatModal,
     StartPage,
     QuestionnairePage,
-    PeopleModal
+    PeopleModal,
+    ApplicationPage
   ],
   providers: [
     StatusBar,
