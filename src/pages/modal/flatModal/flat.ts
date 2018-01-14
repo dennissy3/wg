@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Injectable, Pipe, PipeTransform} from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
@@ -19,11 +18,13 @@ export class FlatModal {
   public map: any;
   public markers = [];
   flat;
+  imgs;
 
 
   constructor(public navCtrl: NavController, public viewCtrl: ViewController, public params: NavParams) {
     this.flat = params.get('data');
-    console.log(this.flat[0]);
+    this.imgs = this.flat.imgs
+    console.log(this.flat);
   }
 
   presentApplication(event){
@@ -62,25 +63,5 @@ export class FlatModal {
 
   hack(val) {
     return Array.from(val);
-  }
-}
-
-@Pipe({ name: 'keys',  pure: false })
-export class KeysPipe implements PipeTransform {
-  transform(value: any, args?: any[]): any[] {
-    // check if "routes" exists
-    if (value) {
-      // create instance vars to store keys and final output
-      let keyArr:any[] = Object.keys(value),
-        dataArr = [];
-
-      // loop through the object,
-      // pushing values to the return array
-      keyArr.forEach((key:any) => {
-        dataArr.push(value[key]);
-      });
-      // return the resulting array
-      return dataArr;
-    }
   }
 }
