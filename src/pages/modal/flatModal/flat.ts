@@ -4,6 +4,7 @@ import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
 import {ModalController} from "ionic-angular/index";
 import {ViewController} from "ionic-angular/index";
+import {NavParams} from "ionic-angular/index";
 
 declare var google;
 
@@ -16,9 +17,11 @@ export class FlatModal {
   public map: any;
   public markers = [];
 
-  constructor(public navCtrl: NavController, public viewCtrl: ViewController) {
-
+  constructor(public navCtrl: NavController, public viewCtrl: ViewController, params: NavParams) {
+    let flat = params.get('data')
+    console.log(JSON.stringify(flat));
   }
+
 
   ngOnInit() {
     this.initMap();

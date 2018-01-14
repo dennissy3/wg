@@ -47,8 +47,10 @@ page-flat {
     height: 50vh;
   }
 
-  .flat-slider ion-slide, .flat-slider ion-slide ion-card {
+  .flat-slider ion-slide ion-card {
     border-radius: 3% !important;
+    height: 60vh;
+    background-size: cover;
   }
 
   #map {

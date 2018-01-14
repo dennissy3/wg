@@ -15,12 +15,52 @@ export class HomePage {
   @ViewChild(Slides) slides: Slides;
   adOnline: boolean = true;
 
+  applicants = [{
+    "name": "David",
+    "age": 25,
+    "job": "Architect",
+    "fit": 75
+  },
+    {
+      "name": "Kina",
+      "age": 21,
+      "job": "Student",
+      "fit": 90
+    },
+    {
+      "name": "Maleen",
+      "age": 29,
+      "job": "Designer",
+      "fit": 42
+    },
+    {
+      "name": "Max",
+      "age": 23,
+      "job": "Sales",
+      "fit": 23
+    }
+  ];
+
+  flats = [{
+    "imgs": ["1", "2", "3"],
+    "location": "Neukölln",
+    "people": ["Maja", "Karlo"],
+    "nickname": "Neuköllnies"
+  },
+    {
+      "imgs": ["4", "5", "6"],
+      "location": "Prenzlauer Berg",
+      "people": ["Phreddy", "Susi"],
+      "nickname": "Wang Bang"
+    }
+  ]
+
   constructor(public navCtrl: NavController, public modalCtrl: ModalController) {
 
   }
 
-  presentFlatModal() {
-    let modal = this.modalCtrl.create(FlatModal);
+  presentFlatModal(f) {
+    let modal = this.modalCtrl.create(FlatModal,{data: f});
     modal.present();
   }
 

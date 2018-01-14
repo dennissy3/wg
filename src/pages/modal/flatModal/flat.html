@@ -22,17 +22,10 @@
     </div>
   </div>
 
+  {{flat}}
   <ion-slides class="flat-slider" slidesPerView="1.5">
-    <ion-slide>
-      <ion-card style="background-image: url('../../../assets/1.jpg'); height: 60vh; background-size: cover">
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card style="background-image: url('../../../assets/2.jpg'); height: 60vh; background-size: cover">
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card style="background-image: url('../../../assets/3.jpg'); height: 60vh; background-size: cover">
+    <ion-slide *ngFor="let i of f.imgs">
+      <ion-card style="background-image: url('../../../assets/{{i}}.jpg');">
       </ion-card>
     </ion-slide>
   </ion-slides>

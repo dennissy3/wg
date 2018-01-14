@@ -25882,8 +25882,10 @@ page-flat .flat-slider {
   height: 50vh;
 }
 
-page-flat .flat-slider ion-slide, page-flat .flat-slider ion-slide ion-card {
+page-flat .flat-slider ion-slide ion-card {
   border-radius: 3% !important;
+  height: 60vh;
+  background-size: cover;
 }
 
 page-flat #map {

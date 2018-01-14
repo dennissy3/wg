@@ -6,47 +6,30 @@
   </ion-navbar>
 </ion-header>-->
 
-<ion-content>
+<ion-content no-bounce>
   <ion-slides pager>
 
-    <ion-slide *ngFor="let q of metaQuestions">
+    <ion-slide *ngFor="let q of metaQuestions; let i = index">
       <p class="question">{{q.question}}</p>
-      <ion-item>
-        <ion-input type={{q.answerType}} placeholder={{q.answerLabels[0]}}></ion-input>
+
+      <ion-item *ngIf="q.answerLabels.length <= 1">
+        <ion-input type={{q.answerType}} [(ngModel)]="a[0].meta[i]" placeholder={{q.answerLabels[0]}}></ion-input>
         <button clear item-right (click)="move(0, 'Klosterstraße 62')"><ion-icon name="arrow-forward"></ion-icon></button>
       </ion-item>
-    </ion-slide>
 
-
-
-    <ion-slide>
-        <p class="question">What is your gender?</p>
-        <ion-card class="answer" (click)="answer(0,0)">
+      <div *ngIf="q.answerLabels.length == 2">
+        <ion-card class="answer" (click)="answer(i, q.answerLabels[0])">
           <ion-card-content>
-            I am female
+            {{q.answerLabels[0]}}
           </ion-card-content>
         </ion-card>
 
-        <ion-card class="answer">
+        <ion-card class="answer" (click)="answer(i, q.answerLabels[1])">
           <ion-card-content>
-            I am female
+            {{q.answerLabels[1]}}
           </ion-card-content>
         </ion-card>
-    </ion-slide>
-
-    <ion-slide>
-      <p class="question">What is your name?</p>
-      <ion-card class="answer" (click)="answer(5,0)">
-        <ion-card-content>
-          David
-        </ion-card-content>
-      </ion-card>
-
-      <ion-card class="answer">
-        <ion-card-content>
-          Karlo
-        </ion-card-content>
-      </ion-card>
+      </div>
     </ion-slide>
   </ion-slides>
 </ion-content>
